@@ -1,0 +1,16 @@
+@use '../breakpoints' as *;
+
+.region-branding {
+    margin-left: 48px;
+
+    @include breakpoint-down-lg {
+        margin: auto;
+    }
+
+    img {
+        @include breakpoint-down-lg {
+            width: 145px;
+            height: auto;
+        }
+    }
+}

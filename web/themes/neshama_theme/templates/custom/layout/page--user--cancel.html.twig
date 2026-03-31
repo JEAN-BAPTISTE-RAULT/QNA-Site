@@ -1,0 +1,22 @@
+<div class="layout-container user-cancel user-cancel__container">
+  <header role="banner">
+    {{ page.branding }}
+    {{ page.header_nav }}
+  </header>
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    <div class="layout-content d-flex">
+        <div class="motif motif_color-primary motif_border"></div>
+        <div class="user-cancel__content-container">
+            <div class="user-cancel__content">{{ page.content }}</div>
+        </div>
+        <div class="motif motif_primary motif_border ms-auto"></div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    {{ page.footer_nav }}
+  </footer>
+</div>

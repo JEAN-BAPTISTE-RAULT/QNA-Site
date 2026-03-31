@@ -1,0 +1,30 @@
+{%
+	set classes = [
+		'paragraph',
+		'paragraph--type--' ~ paragraph.bundle|clean_class,
+		view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+		not paragraph.isPublished() ? 'paragraph--unpublished'
+	]
+%}
+{% block paragraph %}
+	<div{{ attributes.addClass(classes) }}>
+		{% block content %}
+			<div>
+				{% set link = paragraph.field_link %}
+				{% set url = link.uri %}
+				{% set target = link.options.attributes.target ?? '_self' %}
+				{% set is_external = target == '_blank' %}
+			
+				<a href="{{ url }}" 
+					target="{{ target }}"
+					{% if is_external %}rel="noopener noreferrer"{% endif %}
+					aria-label="{{ link.title }}{% if is_external %} {{ 'new window'|t }}{% endif %}">
+					{{ content.field_image }}
+					{% if is_external %}
+					<span class="visually-hidden">{{ 'new window'|t }}</span>
+					{% endif %}
+				</a>
+			</div>
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

@@ -1,0 +1,18 @@
+uuid: 16a699ea-73d2-4eef-80eb-99baf1d23c54
+langcode: en
+status: true
+dependencies:
+  theme:
+    - neshama_theme
+id: neshama_theme_local_tasks
+theme: neshama_theme
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

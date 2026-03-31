@@ -1,0 +1,19 @@
+uuid: 3f3f2702-8168-4175-8212-beceed82d7be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.element_documentary_resource
+id: paragraph.element_documentary_resource.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: element_documentary_resource
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

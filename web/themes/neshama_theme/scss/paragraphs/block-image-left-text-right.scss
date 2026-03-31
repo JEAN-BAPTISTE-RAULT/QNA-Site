@@ -1,0 +1,118 @@
+@use '../breakpoints' as *;
+
+.paragraph--type--block-image-left-text-right {
+    .block-img-left {
+        &__container {
+            background-color: var(--n-utility-2);
+            display: flex;
+            border-right: solid var(--n-primary) 100px;
+
+            .motif {
+                background-color: white;
+
+                @include breakpoint-down-lg {
+                    display: none;
+                }
+            }
+
+            @include breakpoint-down-lg {
+                border: none;
+            }
+        }
+
+        &__content {
+            padding: 3.125rem 6.5625rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex: 1;
+
+            @include breakpoint-down-lg {
+                flex-direction: column;
+                padding: 30px 20px 35px;
+            }
+
+            &-image,
+            &-text {
+                width: calc(50% - 1rem);
+
+                @include breakpoint-down-lg {
+                    width: 100%;
+                }
+            }
+
+            &-image {
+                img {
+                    width: 100%;
+                    height: auto;
+
+                    @include breakpoint-down-lg {
+                        margin-bottom: 26px;
+                    }
+                }
+            }
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                a {
+                    background-color: var(--n-primary);
+                    padding: 0px 20px;
+                    border-radius: 90px;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 40px;
+                    text-transform: none;
+                    text-decoration: none;
+                    width: max-content;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        background-color: var(--n-secondary);
+                        color: black;
+                    }
+                }
+            }
+
+
+            &-text div div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 35px;
+                    margin-bottom: 15px;
+
+                    @include breakpoint-down-lg {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+                }
+
+                p:nth-child(1),
+                p:nth-child(3) {
+                    display: none;
+                }
+
+                p:nth-child(2) {
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 25px;
+
+                    @include breakpoint-down-lg {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

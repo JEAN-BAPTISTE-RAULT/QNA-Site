@@ -1,0 +1,23 @@
+uuid: ca260f0c-8695-412f-bb63-bb871f2a5256
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_share_on_social_medias
+    - node.type.testimony
+id: node.testimony.field_share_on_social_medias
+field_name: field_share_on_social_medias
+entity_type: node
+bundle: testimony
+label: 'Share on social medias'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

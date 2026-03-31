@@ -1,0 +1,38 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% set file_entity = paragraph.field_file.entity %}
+      {% set file_url = file_url(file_entity.fileuri) %}
+      {% set filename = file_entity.filename.value %}
+      {% set extension = filename|split('.')|last|upper %}
+      {% set filesize = file_entity.filesize.value|format_size %}
+      
+      <a href="{{ file_url }}" download>
+        <div class="d-flex gap-3 align-items-center">
+          <div class="element__documentary-photo">
+            <img src="/sites/default/files/icons/file.png" 
+                width="22" 
+                height="27" 
+                alt="{{'File' | t}}" 
+                aria-hidden="true"/>
+          </div>
+          <div>
+            <div>{{ paragraph.field_title.value }}</div>
+            <div>
+              <span>{{ extension }}</span>
+              <span>({{ filesize }})</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

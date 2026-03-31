@@ -1,0 +1,39 @@
+uuid: 8c719f07-7f3d-4a3c-82fe-246e73bc6d20
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_resources_list.body
+    - field.field.node.page_resources_list.field_country
+    - field.field.node.page_resources_list.field_metatags
+    - field.field.node.page_resources_list.field_page_title
+    - field.field.node.page_resources_list.field_share_on_social_medias
+    - node.type.page_resources_list
+  module:
+    - text
+    - user
+id: node.page_resources_list.teaser
+targetEntityType: node
+bundle: page_resources_list
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_country: true
+  field_metatags: true
+  field_page_title: true
+  field_share_on_social_medias: true
+  langcode: true

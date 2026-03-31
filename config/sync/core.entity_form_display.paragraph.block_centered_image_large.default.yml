@@ -1,0 +1,47 @@
+uuid: 161356fe-eb60-4c3f-9a71-db8ce2b3ae53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_centered_image_large.field_caption
+    - field.field.paragraph.block_centered_image_large.field_image
+    - image.style.neshama_image_100
+    - paragraphs.paragraphs_type.block_centered_image_large
+  module:
+    - image_widget_crop
+id: paragraph.block_centered_image_large.default
+targetEntityType: paragraph
+bundle: block_centered_image_large
+mode: default
+content:
+  field_caption:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_widget_crop
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: neshama_image_100
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - neshama_no_ratio
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

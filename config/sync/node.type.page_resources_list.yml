@@ -1,0 +1,17 @@
+uuid: 796ce141-ad9b-436b-a2f6-0200bba0a7de
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Page : Resources list'
+type: page_resources_list
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,13 @@
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  header, 
+  #block-neshama-theme-menu-footer,
+  #block-neshama-theme-footersocialmedias,
+  .block-header__socials {
+    display: none !important;
+  }
+}

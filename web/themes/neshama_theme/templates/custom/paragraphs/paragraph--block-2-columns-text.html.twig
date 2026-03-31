@@ -1,0 +1,22 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="d-flex gap-3">
+        <div class="flex-0-0-50">
+          {{ content.field_text_element_1 }}
+        </div>
+        <div class="flex-0-0-50">
+          {{ content.field_text_element_2 }}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

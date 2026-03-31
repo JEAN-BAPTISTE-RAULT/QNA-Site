@@ -1,0 +1,22 @@
+uuid: e239bab1-e4ae-4de9-a7bd-a0193a9cc266
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: url_lectures_en
+label: 'URL Lectures EN'
+type: 'canonical_entities:node'
+pattern: '/online-lectures/[node:field_page_title]'
+selection_criteria:
+  a871983f-abab-413a-bfef-2c66b76b9278:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a871983f-abab-413a-bfef-2c66b76b9278
+    context_mapping:
+      node: node
+    bundles:
+      lecture: lecture
+selection_logic: and
+weight: -5
+relationships: {  }

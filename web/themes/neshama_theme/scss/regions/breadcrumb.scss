@@ -1,0 +1,20 @@
+@use '../breakpoints' as *;
+
+.block-breadcrumb {
+    &__container {
+        a {
+            color: black;
+            text-decoration: none;
+            text-transform: none;
+            font-size: inherit;
+        }
+
+        li {
+            font-size: 13px;
+        }
+
+        @include breakpoint-down-lg {
+            display: none;
+        }
+    }
+}

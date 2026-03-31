@@ -1,0 +1,18 @@
+uuid: 29039b83-2f22-4aff-9697-c9b187fa4dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.block_centered_image_large
+id: paragraph.block_centered_image_large.created
+field_name: created
+entity_type: paragraph
+bundle: block_centered_image_large
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

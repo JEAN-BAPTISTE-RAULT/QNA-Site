@@ -1,0 +1,10 @@
+uuid: 706e5bdd-966f-4956-88de-14427cd01c7a
+langcode: en
+status: true
+dependencies: {  }
+id: block_slideshow_stakeholders
+label: 'Block : Slideshow stakeholders'
+icon_uuid: null
+icon_default: null
+description: 'Title + Link + Items "Block : Stakeholder"'
+behavior_plugins: {  }

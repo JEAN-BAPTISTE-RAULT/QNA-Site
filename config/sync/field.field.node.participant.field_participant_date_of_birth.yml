@@ -1,0 +1,21 @@
+uuid: 9ef5bbe0-c1cf-46e7-bcc0-288c2573b20c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_date_of_birth
+    - node.type.participant
+  module:
+    - datetime
+id: node.participant.field_participant_date_of_birth
+field_name: field_participant_date_of_birth
+entity_type: node
+bundle: participant
+label: 'Date of birth'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

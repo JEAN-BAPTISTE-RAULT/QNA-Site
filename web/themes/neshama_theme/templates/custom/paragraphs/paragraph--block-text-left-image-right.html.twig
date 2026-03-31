@@ -1,0 +1,25 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="d-flex">
+        <div class="motif motif_primary motif_border"></div>
+        <div class="block-text d-flex">
+        <div>
+          <img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_image_50') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}" class="img-block" />
+        </div>
+        <div>
+          {{ content.field_text_element_1 }}
+        </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

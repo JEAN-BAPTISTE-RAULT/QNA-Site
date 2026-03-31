@@ -1,0 +1,19 @@
+uuid: 5e49760b-ba12-4600-94d6-2a45c32766af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_firstname
+    - node.type.participant
+id: node.participant.field_participant_firstname
+field_name: field_participant_firstname
+entity_type: node
+bundle: participant
+label: 'First name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

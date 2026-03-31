@@ -1,0 +1,12 @@
+uuid: 343aa1b7-d182-4b5f-9f22-1ff28ee41ed5
+langcode: en
+status: true
+dependencies: {  }
+label: 'Neshama : no ratio'
+id: neshama_no_ratio
+description: ''
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

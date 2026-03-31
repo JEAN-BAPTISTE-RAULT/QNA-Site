@@ -1,0 +1,43 @@
+uuid: edc362f7-df02-40bd-8b13-c3e273b7432b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_contact.body
+    - field.field.node.page_contact.field_metatags
+    - field.field.node.page_contact.field_page_title
+    - node.type.page_contact
+  module:
+    - metatag
+    - text
+    - user
+id: node.page_contact.default
+targetEntityType: node
+bundle: page_contact
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  links: true

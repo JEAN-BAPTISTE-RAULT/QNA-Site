@@ -1,0 +1,33 @@
+uuid: eddf407c-cd94-4da0-917b-fc1c11ae098b
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: neshama_news
+label: 'Neshama : News'
+effects:
+  7a7e548a-190d-4797-8ee6-343d282b2a1c:
+    uuid: 7a7e548a-190d-4797-8ee6-343d282b2a1c
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  c5486146-048e-447e-80b7-5e598243e42c:
+    uuid: c5486146-048e-447e-80b7-5e598243e42c
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  83fce3e4-12ec-456b-b9ca-789c0d345682:
+    uuid: 83fce3e4-12ec-456b-b9ca-789c0d345682
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 800
+      height: 450
+      anchor: center-center
+pipeline: optimize

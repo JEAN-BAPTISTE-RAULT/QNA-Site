@@ -1,0 +1,33 @@
+uuid: b03f873b-679f-4360-806f-51d07003dce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: neshama_partner
+label: 'Neshama : Partner'
+effects:
+  296772d5-85a7-4954-938a-f87062c5fb9b:
+    uuid: 296772d5-85a7-4954-938a-f87062c5fb9b
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  87110647-f2e2-43e7-b814-7338b98fa7ee:
+    uuid: 87110647-f2e2-43e7-b814-7338b98fa7ee
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  b3b2e16c-63c6-4486-b2dd-06aef1e82458:
+    uuid: b3b2e16c-63c6-4486-b2dd-06aef1e82458
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 400
+      height: 225
+      anchor: center-center
+pipeline: optimize

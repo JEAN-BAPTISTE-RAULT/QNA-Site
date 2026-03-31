@@ -1,0 +1,22 @@
+uuid: 62912846-e58e-48bc-9467-4292ecc79b6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.block_centered_image_large
+id: paragraph.block_centered_image_large.status
+field_name: status
+entity_type: paragraph
+bundle: block_centered_image_large
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

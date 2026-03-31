@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\node\NodeInterface;
+
+/**
+ * Restrict view node access
+ */
+function neshama_node_access_check_node_access(NodeInterface $node) {
+  // Check if the node type is 'resource' or 'participant'
+  if ($node->getType() == 'resource' || $node->getType() == 'participant') {
+    // Allow access for administrators
+    $current_user = \Drupal::currentUser();
+    if ($current_user->hasPermission('administer nodes')) {
+      return AccessResult::allowed();
+    }
+    // Deny access for all other users
+    return AccessResult::forbidden();
+  }
+
+  // Default access result for other cases
+  return AccessResult::neutral();
+}

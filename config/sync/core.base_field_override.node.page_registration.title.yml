@@ -1,0 +1,18 @@
+uuid: 82ed5e87-e40d-4bbf-9ac0-016b7dfe0885
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_registration
+id: node.page_registration.title
+field_name: title
+entity_type: node
+bundle: page_registration
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

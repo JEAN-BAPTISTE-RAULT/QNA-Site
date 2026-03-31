@@ -1,0 +1,23 @@
+uuid: ad2e64f5-3548-4a3c-935c-84682db778e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_share_on_social_medias
+    - node.type.page_resources_list
+id: node.page_resources_list.field_share_on_social_medias
+field_name: field_share_on_social_medias
+entity_type: node
+bundle: page_resources_list
+label: 'Share on social medias'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

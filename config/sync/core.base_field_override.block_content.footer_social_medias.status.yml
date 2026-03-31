@@ -1,0 +1,22 @@
+uuid: db4a5669-52b8-4078-88ae-3369f773cd33
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_social_medias
+id: block_content.footer_social_medias.status
+field_name: status
+entity_type: block_content
+bundle: footer_social_medias
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

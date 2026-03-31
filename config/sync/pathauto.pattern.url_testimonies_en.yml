@@ -1,0 +1,22 @@
+uuid: aa73b5f6-ec37-428a-801c-afbafbecd14c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: url_testimonies_en
+label: 'URL Testimonies EN'
+type: 'canonical_entities:node'
+pattern: '/live-testimonies/[node:field_page_title]'
+selection_criteria:
+  02cfb866-770b-4a4e-942c-421c24911fd7:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 02cfb866-770b-4a4e-942c-421c24911fd7
+    context_mapping:
+      node: node
+    bundles:
+      testimony: testimony
+selection_logic: and
+weight: -5
+relationships: {  }

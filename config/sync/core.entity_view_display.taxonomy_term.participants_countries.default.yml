@@ -1,0 +1,35 @@
+uuid: 0b711219-1c89-46be-93ac-40a95f703b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.participants_countries.field_flag
+    - taxonomy.vocabulary.participants_countries
+  module:
+    - image
+    - text
+id: taxonomy_term.participants_countries.default
+targetEntityType: taxonomy_term
+bundle: participants_countries
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_flag:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

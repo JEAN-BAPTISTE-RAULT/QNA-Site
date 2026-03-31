@@ -1,0 +1,12 @@
+uuid: d9f37393-fd6a-411b-bab1-55dca34fa934
+langcode: en
+status: true
+dependencies: {  }
+label: 'Neshama : 16/9'
+id: neshama_16_9
+description: ''
+aspect_ratio: '16:9'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

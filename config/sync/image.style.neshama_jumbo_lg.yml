@@ -1,0 +1,33 @@
+uuid: 8f52948f-5da7-4c95-aeaa-1b648d37aec8
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_1240_523
+  module:
+    - crop
+name: neshama_jumbo_lg
+label: 'Neshama : Jumbo - LG'
+effects:
+  fd244bc7-50d4-4d96-a5f1-c85a1f119c76:
+    uuid: fd244bc7-50d4-4d96-a5f1-c85a1f119c76
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_1240_523
+      automatic_crop_provider: null
+  50ede7b1-1763-4d62-b763-bb9c22870846:
+    uuid: 50ede7b1-1763-4d62-b763-bb9c22870846
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  b70bd4f6-7c85-45f5-aae9-aadce4c222ba:
+    uuid: b70bd4f6-7c85-45f5-aae9-aadce4c222ba
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 992
+      height: 418
+      anchor: center-center
+pipeline: optimize

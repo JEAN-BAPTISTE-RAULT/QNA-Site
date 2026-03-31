@@ -1,0 +1,19 @@
+uuid: 88e54b27-ebf1-4c4c-8588-a13e0d89e358
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.block_centered_image_large
+id: paragraph.block_centered_image_large.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: block_centered_image_large
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

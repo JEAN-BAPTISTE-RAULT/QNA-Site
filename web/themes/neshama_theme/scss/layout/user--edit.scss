@@ -1,0 +1,74 @@
+@use "../mixins" as *;
+
+.user-edit {
+    &__content-container {
+        flex: 1;
+        padding: 70px 105px;
+        padding-top: 32px;
+        background-color: var(--n-utility-2);
+    }
+
+    &__container {
+        margin: 0;
+    }
+
+    &__content {
+        
+    }
+
+    .form {
+        &-text,
+        &-item {
+            margin: 0;
+        }
+    }
+    
+    .js-form-item {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        font-size: 0.85em;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        &[type='text'],
+        &[type='password'],
+        &[type='email'] {
+            @include input-reset();
+            width: 385px;
+        }
+
+        &[type='submit'] {
+            @include button-reset();
+        }
+    }
+
+    select {
+        @include input-reset();
+        width: 385px;
+    }
+
+    details {
+        background-color: white;
+    }
+
+    form {
+        --gap-x: 10px;
+        max-width: 700px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        > * {
+            width: 100%;
+        }
+
+        .confirm-parent,
+        .password-parent {
+            max-width: 100%;
+        }
+    }
+}

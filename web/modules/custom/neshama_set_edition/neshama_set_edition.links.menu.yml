@@ -1,0 +1,22 @@
+neshama_set_edition.current_edition_menu_link:
+  title: 'Set current edition'
+  description: 'Define the current edition for this year.'
+  route_name: neshama_set_edition.current_edition_form
+  parent: system.admin_content
+  weight: 100
+
+neshama_set_edition.dynamic_lecture_links:
+  title: 'Dynamic Lectures'
+  route_name: entity.node.canonical
+  class: \Drupal\neshama_set_edition\Plugin\Menu\DynamicLectureLinks
+  deriver: \Drupal\neshama_set_edition\Plugin\Derivative\DynamicLectureLinks
+  menu_name: main
+  weight: 0
+
+neshama_set_edition.dynamic_testimony_links:
+  title: 'Dynamic Testimonies'
+  route_name: entity.node.canonical
+  class: \Drupal\neshama_set_edition\Plugin\Menu\DynamicTestimonyLinks
+  deriver: \Drupal\neshama_set_edition\Plugin\Derivative\DynamicTestimonyLinks
+  menu_name: main
+  weight: 0

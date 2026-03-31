@@ -1,0 +1,85 @@
+uuid: f4bd13f0-06eb-4a7c-9e2c-a6c8891d15c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resources_videos
+    - paragraphs.paragraphs_type.block_resources_list
+    - paragraphs.paragraphs_type.element_video_resource
+  module:
+    - entity_reference_revisions
+id: paragraph.block_resources_list.field_resources_videos
+field_name: field_resources_videos
+entity_type: paragraph
+bundle: block_resources_list
+label: Videos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      element_video_resource: element_video_resource
+    negate: 0
+    target_bundles_drag_drop:
+      block_2_columns_text:
+        weight: 16
+        enabled: false
+      block_centered_image_large:
+        weight: 17
+        enabled: false
+      block_centered_image_medium:
+        weight: 18
+        enabled: false
+      block_image_left_text_right:
+        weight: 19
+        enabled: false
+      block_jumbo:
+        weight: 20
+        enabled: false
+      block_left_aligned_text:
+        weight: 21
+        enabled: false
+      block_news:
+        weight: 26
+        enabled: false
+      block_partner:
+        weight: 22
+        enabled: false
+      block_resources_list:
+        weight: 23
+        enabled: false
+      block_session_details:
+        weight: 29
+        enabled: false
+      block_slideshow:
+        weight: 24
+        enabled: false
+      block_text_left_image_right:
+        weight: 25
+        enabled: false
+      block_video:
+        weight: 26
+        enabled: false
+      element_documentary_resource:
+        weight: 27
+        enabled: false
+      element_item_slideshow:
+        weight: 34
+        enabled: false
+      element_link_resource:
+        weight: 28
+        enabled: false
+      element_social_media:
+        weight: 36
+        enabled: false
+      element_text:
+        weight: 29
+        enabled: false
+      element_video_resource:
+        weight: 30
+        enabled: true
+field_type: entity_reference_revisions

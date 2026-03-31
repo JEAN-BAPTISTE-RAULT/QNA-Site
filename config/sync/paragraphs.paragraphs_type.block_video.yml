@@ -1,0 +1,10 @@
+uuid: 09c722e0-fdd6-4180-8a3c-ca78805c5c9d
+langcode: en
+status: true
+dependencies: {  }
+id: block_video
+label: 'Block : Video'
+icon_uuid: null
+icon_default: null
+description: 'Title + Preview + Link + Caption'
+behavior_plugins: {  }

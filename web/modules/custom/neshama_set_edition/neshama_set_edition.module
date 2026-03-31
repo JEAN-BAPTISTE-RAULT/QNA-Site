@@ -1,0 +1,67 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+
+/**
+ * Automatically set edition on new nodes of type 'participant', 'lecture' and 'testimony'
+ */
+function neshama_set_edition_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof Node && $entity->isNew()) {
+    if (in_array($entity->bundle(), ['participant', 'lecture', 'testimony'])) {
+      $edition_tid = \Drupal::config('neshama_set_edition.settings')->get('current_edition');
+      if ($edition_tid && $entity->hasField('field_edition') && $entity->get('field_edition')->isEmpty()) {
+        $entity->set('field_edition', ['target_id' => $edition_tid]);
+      }
+    }
+  }
+}
+
+/**
+ * Disable field_edition on creation only for nodes of type 'participant', 'lecture' and 'testimony'
+ */
+function neshama_set_edition_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+
+  if ($node instanceof NodeInterface && $node->isNew()) {
+    if (in_array($node->bundle(), ['participant', 'lecture', 'testimony'])) {
+      if (isset($form['field_edition'])) {
+        $form['field_edition']['#disabled'] = TRUE;
+      }
+    }
+  }
+}
+
+/**
+ * Rebuild menu cache at each node of type 'lecture' and 'testimony' insertion
+ */
+function neshama_set_edition_entity_insert(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'node' && ($entity->bundle() === 'lecture' || $entity->bundle() === 'testimony')) {
+    \Drupal::service('cache.menu')->invalidateAll();
+    \Drupal::service('router.builder')->rebuild();
+    \Drupal::service('plugin.manager.menu.link')->rebuild();
+  }
+}
+
+/**
+ * Rebuild menu cache at each node of type 'lecture' and 'testimony' update
+ */
+function neshama_set_edition_entity_update(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'node' && ($entity->bundle() === 'lecture' || $entity->bundle() === 'testimony')) {
+    \Drupal::service('cache.menu')->invalidateAll();
+    \Drupal::service('router.builder')->rebuild();
+    \Drupal::service('plugin.manager.menu.link')->rebuild();
+  }
+}
+
+/**
+ * Rebuild menu cache at each node of type 'lecture' and 'testimony' deletion
+ */
+function neshama_set_edition_entity_delete(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'node' && ($entity->bundle() === 'lecture' || $entity->bundle() === 'testimony')) {
+    \Drupal::service('cache.menu')->invalidateAll();
+    \Drupal::service('router.builder')->rebuild();
+    \Drupal::service('plugin.manager.menu.link')->rebuild();
+  }
+}

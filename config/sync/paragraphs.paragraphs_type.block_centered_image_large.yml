@@ -1,0 +1,10 @@
+uuid: cb73af95-0970-46e9-bf6a-47528203743d
+langcode: en
+status: true
+dependencies: {  }
+id: block_centered_image_large
+label: 'Block : Centered Image'
+icon_uuid: null
+icon_default: null
+description: 'Image + Caption'
+behavior_plugins: {  }

@@ -1,0 +1,24 @@
+uuid: d8d75e20-0c41-45fa-a3ca-b621937676b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_contact
+  module:
+    - text
+id: node.page_contact.body
+field_name: body
+entity_type: node
+bundle: page_contact
+label: 'Page description'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,23 @@
+@use 'colors';
+@use 'backgrounds';
+@use 'buttons';
+@use 'swiper';
+@use 'modal';
+@use 'pager';
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-0-0-50 {
+  flex: 0 0 50%;
+}
+
+.flex-0-0-25 {
+  flex: 0 0 50%;
+}
+
+.placeholder {
+  background-color: transparent;
+  color: currentcolor;
+}

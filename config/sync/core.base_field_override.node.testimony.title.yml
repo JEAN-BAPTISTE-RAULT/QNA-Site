@@ -1,0 +1,18 @@
+uuid: e6219334-f07c-49e0-838e-d39287655b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.testimony
+id: node.testimony.title
+field_name: title
+entity_type: node
+bundle: testimony
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

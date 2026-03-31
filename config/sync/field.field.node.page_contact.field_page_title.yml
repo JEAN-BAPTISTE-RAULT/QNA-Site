@@ -1,0 +1,19 @@
+uuid: 9177ba6d-2070-4c41-a005-5f7e9c20bbb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title
+    - node.type.page_contact
+id: node.page_contact.field_page_title
+field_name: field_page_title
+entity_type: node
+bundle: page_contact
+label: 'Page title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

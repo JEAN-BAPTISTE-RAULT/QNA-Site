@@ -1,0 +1,19 @@
+uuid: d3df39b5-6088-42bb-89b9-1445003e4ba9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title
+    - node.type.page_legals
+id: node.page_legals.field_page_title
+field_name: field_page_title
+entity_type: node
+bundle: page_legals
+label: 'Page title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

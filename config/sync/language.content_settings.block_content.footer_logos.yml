@@ -1,0 +1,18 @@
+uuid: d9ae90a7-462f-42f3-b1a5-b2a2cbea3a51
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logos
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.footer_logos
+target_entity_type_id: block_content
+target_bundle: footer_logos
+default_langcode: site_default
+language_alterable: true

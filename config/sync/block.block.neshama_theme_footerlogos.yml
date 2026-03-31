@@ -1,0 +1,25 @@
+uuid: be72f05f-e422-436d-9e7c-d82442cbc0a7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_logos:8f761639-d16f-4e62-84da-f107f2245da8'
+  module:
+    - block_content
+  theme:
+    - neshama_theme
+id: neshama_theme_footerlogos
+theme: neshama_theme
+region: footer_nav
+weight: -4
+provider: null
+plugin: 'block_content:8f761639-d16f-4e62-84da-f107f2245da8'
+settings:
+  id: 'block_content:8f761639-d16f-4e62-84da-f107f2245da8'
+  label: 'Footer logos'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

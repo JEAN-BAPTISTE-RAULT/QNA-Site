@@ -1,0 +1,22 @@
+uuid: 226056ed-2a00-4eff-98bc-9c953e415bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lecture_content
+    - paragraphs.paragraphs_type.block_session_details
+  module:
+    - text
+id: paragraph.block_session_details.field_lecture_content
+field_name: field_lecture_content
+entity_type: paragraph
+bundle: block_session_details
+label: Content
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

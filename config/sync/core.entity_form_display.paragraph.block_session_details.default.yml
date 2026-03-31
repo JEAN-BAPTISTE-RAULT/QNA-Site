@@ -1,0 +1,84 @@
+uuid: 6bf9d067-b5d2-40d8-85cf-fcb7d15dbbc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_session_details.field_description
+    - field.field.paragraph.block_session_details.field_image
+    - field.field.paragraph.block_session_details.field_learning_objectives
+    - field.field.paragraph.block_session_details.field_lecture_content
+    - field.field.paragraph.block_session_details.field_role
+    - field.field.paragraph.block_session_details.field_title
+    - image.style.neshama_lecturer
+    - paragraphs.paragraphs_type.block_session_details
+  module:
+    - image_widget_crop
+    - text
+id: paragraph.block_session_details.default
+targetEntityType: paragraph
+bundle: block_session_details
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_widget_crop
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: neshama_lecturer
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - neshama_16_9
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_learning_objectives:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_lecture_content:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_role:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

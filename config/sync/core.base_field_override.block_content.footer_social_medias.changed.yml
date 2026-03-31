@@ -1,0 +1,18 @@
+uuid: 153f5af8-0338-496a-89c0-cc4183725aa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_social_medias
+id: block_content.footer_social_medias.changed
+field_name: changed
+entity_type: block_content
+bundle: footer_social_medias
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

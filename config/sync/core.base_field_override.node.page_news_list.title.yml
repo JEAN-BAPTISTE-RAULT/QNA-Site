@@ -1,0 +1,18 @@
+uuid: ba7cfb94-bd35-4953-bde5-7f0937495f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_news_list
+id: node.page_news_list.title
+field_name: title
+entity_type: node
+bundle: page_news_list
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

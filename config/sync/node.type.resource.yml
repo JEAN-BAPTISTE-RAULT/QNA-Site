@@ -1,0 +1,17 @@
+uuid: be5273c2-a32e-4088-ad0d-b0c1aa268c79
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Resource
+type: resource
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

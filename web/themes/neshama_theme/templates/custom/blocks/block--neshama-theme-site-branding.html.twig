@@ -1,0 +1,21 @@
+{% block content %}
+  {% if site_logo or site_name %}
+    <a href="{{ path('<front>') }}" rel="home" class="site-branding block-system-branding-block">
+      {% if site_logo %}
+        <img src="{{ site_logo }}" 
+             alt="{{ site_name ?: 'Home'|t }}" 
+             fetchpriority="high" 
+             width="200" 
+             height="57" 
+             class="site-logo" />
+      {% endif %}
+      {% if site_name %}
+        <span class="site-name">{{ site_name }}</span>
+      {% endif %}
+    </a>
+  {% endif %}
+  
+  {% if site_slogan %}
+    <div class="site-slogan">{{ site_slogan }}</div>
+  {% endif %}
+{% endblock %}

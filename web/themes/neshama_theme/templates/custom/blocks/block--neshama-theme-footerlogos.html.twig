@@ -1,0 +1,29 @@
+{%
+  set classes = [
+    'block-logos-footer',
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<section{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div>
+      <div>
+        {{ content.field_image }}
+      </div>
+      <a href="https://commission.europa.eu/funding-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme/citizens-equality-rights-and-values-programme-overview_en"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{'European Commission' | t}}">
+        {{ content.field_logo }}
+         <span class="visually-hidden">{{'external site, new window' | t}}</span>
+      </a>
+    </div>
+  {% endblock %}
+</section>

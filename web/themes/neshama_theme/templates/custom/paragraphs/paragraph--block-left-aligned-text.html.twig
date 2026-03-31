@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <section class="block-left-aligned-text__container" {{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="motif motif_primary motif_border"></div>
+      <div class="block-left-aligned-text__text">
+        {% if paragraph.field_title.value is not empty %}
+          <div>
+            <h3>{{ paragraph.field_title.value }}</h3>
+          </div>
+        {% endif %}
+        
+        <div>
+          <p>{{ paragraph.field_description.value | raw }}</p>
+        </div>
+      </div>
+    {% endblock %}
+  </section>
+{% endblock paragraph %}

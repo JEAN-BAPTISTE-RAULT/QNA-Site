@@ -1,0 +1,5 @@
+neshama_registration.participant_moderation_tab:
+  route_name: neshama_registration.participant_moderation
+  title: 'Moderation'
+  base_route: entity.node.canonical
+  weight: 50

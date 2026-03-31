@@ -1,0 +1,39 @@
+uuid: 1966fd00-b54f-4b40-a087-e068c697d802
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_partners.body
+    - field.field.node.page_partners.field_metatags
+    - field.field.node.page_partners.field_page_title
+    - field.field.node.page_partners.field_paragraphs
+    - field.field.node.page_partners.field_share_on_social_medias
+    - node.type.page_partners
+  module:
+    - text
+    - user
+id: node.page_partners.teaser
+targetEntityType: node
+bundle: page_partners
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_metatags: true
+  field_page_title: true
+  field_paragraphs: true
+  field_share_on_social_medias: true
+  langcode: true

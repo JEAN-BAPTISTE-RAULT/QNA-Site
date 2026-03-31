@@ -1,0 +1,32 @@
+uuid: 1cb90d7e-3be0-4dc4-9ec1-d67be765075f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_documentary_resource.field_file
+    - field.field.paragraph.element_documentary_resource.field_title
+    - paragraphs.paragraphs_type.element_documentary_resource
+  module:
+    - file
+id: paragraph.element_documentary_resource.default
+targetEntityType: paragraph
+bundle: element_documentary_resource
+mode: default
+content:
+  field_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

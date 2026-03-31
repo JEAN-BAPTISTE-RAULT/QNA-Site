@@ -1,0 +1,11 @@
+uuid: b5e0ed56-d859-407e-beb8-0cd77e990749
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+id: crop.neshama_16_9
+target_entity_type_id: crop
+target_bundle: neshama_16_9
+default_langcode: site_default
+language_alterable: false

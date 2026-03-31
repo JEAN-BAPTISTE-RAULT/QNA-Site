@@ -1,0 +1,17 @@
+uuid: a1b3fb45-8fc3-440d-82e7-7c88407ad9e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Page : Contact'
+type: page_contact
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

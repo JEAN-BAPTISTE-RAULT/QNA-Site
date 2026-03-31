@@ -1,0 +1,10 @@
+uuid: 40402edf-2e59-4ffa-86ca-0a45607fa84b
+langcode: en
+status: true
+dependencies: {  }
+id: block_session_details
+label: 'Block : Session details'
+icon_uuid: null
+icon_default: null
+description: 'Learning objectives + Content + Lecturer picture + Lecturer name + Lecturer role + Lecturer biography'
+behavior_plugins: {  }

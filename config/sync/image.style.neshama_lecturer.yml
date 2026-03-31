@@ -1,0 +1,33 @@
+uuid: 6de3fe57-a851-429f-8785-f15e8c19f0f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: neshama_lecturer
+label: 'Neshama : Lecturer'
+effects:
+  0ea16a0c-3d7b-49b8-81f3-87711907f9cc:
+    uuid: 0ea16a0c-3d7b-49b8-81f3-87711907f9cc
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  63106948-9e51-44b7-9a06-550d962bffc1:
+    uuid: 63106948-9e51-44b7-9a06-550d962bffc1
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  c6384740-125a-4c62-bd98-50c32c96e6fb:
+    uuid: c6384740-125a-4c62-bd98-50c32c96e6fb
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 400
+      height: 225
+      anchor: center-center
+pipeline: optimize

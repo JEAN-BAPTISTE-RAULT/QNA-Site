@@ -1,0 +1,22 @@
+uuid: 4cb6268d-59fe-4255-abe0-d11867d7ebd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: url_legals_en
+label: 'URL Legals EN'
+type: 'canonical_entities:node'
+pattern: '/[node:field_page_title]'
+selection_criteria:
+  1bfb24ce-7884-45e2-830e-de28b02d65de:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1bfb24ce-7884-45e2-830e-de28b02d65de
+    context_mapping:
+      node: node
+    bundles:
+      page_legals: page_legals
+selection_logic: and
+weight: -5
+relationships: {  }

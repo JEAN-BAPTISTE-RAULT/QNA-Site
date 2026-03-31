@@ -1,0 +1,10 @@
+uuid: 4d0a8290-82fa-4def-8943-db9e5c3fa9fb
+langcode: en
+status: true
+dependencies: {  }
+id: block_news
+label: 'Block : News'
+icon_uuid: null
+icon_default: null
+description: 'Title + Link + View of the priority news and 2 others sorted by descendant changed date'
+behavior_plugins: {  }

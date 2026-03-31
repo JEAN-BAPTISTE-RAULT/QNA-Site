@@ -1,0 +1,47 @@
+uuid: a528683a-f809-4982-9f1a-110c418d2d93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_slideshow_stakeholders.field_link
+    - field.field.paragraph.block_slideshow_stakeholders.field_partners
+    - field.field.paragraph.block_slideshow_stakeholders.field_title
+    - paragraphs.paragraphs_type.block_slideshow_stakeholders
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.block_slideshow_stakeholders.default
+targetEntityType: paragraph
+bundle: block_slideshow_stakeholders
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_partners:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

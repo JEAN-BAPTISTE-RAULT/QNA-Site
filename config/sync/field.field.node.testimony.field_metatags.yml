@@ -1,0 +1,21 @@
+uuid: d7367c67-fd4a-4336-a390-68305f4da859
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.testimony
+  module:
+    - metatag
+id: node.testimony.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: testimony
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

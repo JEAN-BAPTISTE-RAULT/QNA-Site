@@ -1,0 +1,103 @@
+uuid: b9514c87-8291-4d2b-a522-a71a3c491b36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.participant.field_country
+    - field.field.node.participant.field_edition
+    - field.field.node.participant.field_image
+    - field.field.node.participant.field_metatags
+    - field.field.node.participant.field_participant_about_me
+    - field.field.node.participant.field_participant_date_of_birth
+    - field.field.node.participant.field_participant_email
+    - field.field.node.participant.field_participant_firstname
+    - field.field.node.participant.field_participant_lastname
+    - field.field.node.participant.field_participant_title
+    - node.type.participant
+  module:
+    - datetime
+    - image
+    - options
+    - user
+id: node.participant.default
+targetEntityType: node
+bundle: participant
+mode: default
+content:
+  field_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_edition:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_participant_about_me:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_participant_date_of_birth:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_participant_email:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_participant_firstname:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_participant_lastname:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_participant_title:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_metatags: true
+  langcode: true
+  links: true

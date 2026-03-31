@@ -1,0 +1,5 @@
+name: Set edition
+type: module
+description: Set current edition
+core_version_requirement: ^11
+package: Neshama

@@ -1,0 +1,10 @@
+uuid: 1f47255f-4b57-4af4-b728-9adbb07fdaee
+langcode: en
+status: true
+dependencies: {  }
+id: block_2_columns_text
+label: 'Block : 2 columns text'
+icon_uuid: null
+icon_default: null
+description: 'Left = Element : Text // Right = Element : Text'
+behavior_plugins: {  }

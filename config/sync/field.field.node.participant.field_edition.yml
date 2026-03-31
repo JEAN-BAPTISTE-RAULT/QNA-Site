@@ -1,0 +1,29 @@
+uuid: bda053a7-5fa4-4e77-8271-8edc3d8f155c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edition
+    - node.type.participant
+    - taxonomy.vocabulary.edition
+id: node.participant.field_edition
+field_name: field_edition
+entity_type: node
+bundle: participant
+label: Edition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      edition: edition
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

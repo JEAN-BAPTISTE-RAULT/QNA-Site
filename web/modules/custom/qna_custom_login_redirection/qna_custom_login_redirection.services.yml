@@ -1,0 +1,10 @@
+services:
+  qna_custom_login_redirection.subscriber:
+    class: Drupal\qna_custom_login_redirection\EventSubscriber\LoginRedirectSubscriber
+    arguments: ['@current_user', '@current_route_match']
+    tags:
+      - { name: event_subscriber }
+  qna_custom_login_redirection.route_subscriber:
+    class: Drupal\qna_custom_login_redirection\Routing\LoginRouteSubscriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,5 @@
+name: 'Passerelle : alter local tasks menu'
+description: 'Alter local tasks menu to delete some options'
+type: module
+core_version_requirement: ^11
+package: 'Passerelle'

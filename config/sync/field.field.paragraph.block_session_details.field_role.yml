@@ -1,0 +1,19 @@
+uuid: 33bfc700-1c97-4507-958d-b21236006c5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_role
+    - paragraphs.paragraphs_type.block_session_details
+id: paragraph.block_session_details.field_role
+field_name: field_role
+entity_type: paragraph
+bundle: block_session_details
+label: 'Lecturer role'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

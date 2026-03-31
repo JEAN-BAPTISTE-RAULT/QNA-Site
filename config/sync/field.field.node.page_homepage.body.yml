@@ -1,0 +1,24 @@
+uuid: b6762bba-2a16-4c98-8f05-4c47060eb036
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_homepage
+  module:
+    - text
+id: node.page_homepage.body
+field_name: body
+entity_type: node
+bundle: page_homepage
+label: 'Site description (for metatags)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

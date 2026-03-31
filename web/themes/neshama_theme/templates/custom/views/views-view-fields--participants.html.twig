@@ -1,0 +1,18 @@
+{% set translated_entity = row._entity | translation %}
+
+<section class="view-fields-participants">	
+	<div class="ratio">
+		<img class="view-fields-participants__image" src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_profile') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
+	</div>
+	<div class="pt-3 pb-3">
+		{% set country_term = translated_entity.fields.field_country.entity %}
+		<img class="view-fields-participants__flag" src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+	</div>
+	<div class="view-fields-participants__content">
+		<h3 class="view-fields-participants__title">
+			<span>{{ translated_entity.fields.field_participant_firstname.0.value }}</span>
+			<span>{{ translated_entity.fields.field_participant_lastname.0.value }}</span>
+		</h3>
+		<div class="view-fields-participants__text">{{ translated_entity.fields.field_participant_about_me.0.value | raw }}</div>
+	</div>
+</section>

@@ -1,0 +1,42 @@
+uuid: 4f819344-8889-48bd-bfd8-c368aecad9e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.neshama_jumbo_lg
+    - image.style.neshama_jumbo_md
+    - image.style.neshama_jumbo_sm
+    - image.style.neshama_jumbo_xl
+    - image.style.neshama_jumbo_xxl
+  theme:
+    - neshama_theme
+id: neshama_jumbo_responsive
+label: 'Neshama : Jumbo - responsive'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: neshama_jumbo_xxl
+    breakpoint_id: neshama_theme.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: neshama_jumbo_xl
+    breakpoint_id: neshama_theme.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: neshama_jumbo_lg
+    breakpoint_id: neshama_theme.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: neshama_jumbo_md
+    breakpoint_id: neshama_theme.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: neshama_jumbo_sm
+    breakpoint_id: neshama_theme.sm
+    multiplier: 1x
+breakpoint_group: neshama_theme
+fallback_image_style: neshama_jumbo_lg

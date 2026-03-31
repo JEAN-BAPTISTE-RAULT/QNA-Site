@@ -1,0 +1,19 @@
+uuid: d54f8d28-bc6e-4647-8589-e7ced20b8d66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.block_jumbo
+id: paragraph.block_jumbo.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: block_jumbo
+label: Subtitle
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

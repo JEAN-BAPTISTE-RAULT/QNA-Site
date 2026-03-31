@@ -1,0 +1,19 @@
+uuid: 8a5a02d1-0a0c-4024-8f03-04bb71bcc2a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.element_video_resource
+id: paragraph.element_video_resource.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: element_video_resource
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

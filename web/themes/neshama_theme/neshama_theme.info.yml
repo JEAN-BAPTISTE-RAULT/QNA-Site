@@ -1,0 +1,37 @@
+name: Neshama
+type: theme
+description: ''
+version: 1.0.0
+core_version_requirement: ^11
+'base theme': stable9
+generator: 'starterkit_theme:11.2.2'
+
+libraries:
+  - neshama_theme/base
+  - neshama_theme/print
+  - neshama_theme/messages
+  - neshama_theme/bootstrap
+  - neshama_theme/neshama
+  - neshama_theme/modal
+  - core/normalize
+
+libraries-extend:
+  user/drupal.user:
+    - neshama_theme/user
+  core/drupal.dropbutton:
+    - neshama_theme/dropbutton
+  core/drupal.dialog:
+    - neshama_theme/dialog
+  file/drupal.file:
+    - neshama_theme/file
+  core/drupal.progress:
+    - neshama_theme/progress
+  core/drupal.tablesort:
+    - neshama_theme/drupal.tablesort
+
+regions:
+  branding: 'Branding'
+  header_nav: 'Header nav'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  footer_nav: 'Footer nav'

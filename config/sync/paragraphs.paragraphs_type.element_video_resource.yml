@@ -1,0 +1,10 @@
+uuid: caad68d8-1964-4f3c-816b-bc226867d9ab
+langcode: en
+status: true
+dependencies: {  }
+id: element_video_resource
+label: 'Element : Video Resource'
+icon_uuid: null
+icon_default: null
+description: 'Title + Preview + Link + Caption'
+behavior_plugins: {  }

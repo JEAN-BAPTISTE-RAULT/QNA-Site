@@ -1,0 +1,33 @@
+uuid: c1882c1b-bbfe-4821-b727-f56a5e5f1a98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_documentary_resource.field_file
+    - field.field.paragraph.element_documentary_resource.field_title
+    - paragraphs.paragraphs_type.element_documentary_resource
+  module:
+    - file
+id: paragraph.element_documentary_resource.default
+targetEntityType: paragraph
+bundle: element_documentary_resource
+mode: default
+content:
+  field_file:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

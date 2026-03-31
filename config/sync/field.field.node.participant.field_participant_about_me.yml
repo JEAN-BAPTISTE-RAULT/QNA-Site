@@ -1,0 +1,19 @@
+uuid: 7a3eb7cb-67b1-42f5-8fc8-fd3d5082fcc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_about_me
+    - node.type.participant
+id: node.participant.field_participant_about_me
+field_name: field_participant_about_me
+entity_type: node
+bundle: participant
+label: 'About me'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

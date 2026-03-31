@@ -1,0 +1,23 @@
+uuid: b0fba433-15ff-4b30-b99b-8a89a97e722e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.block_slideshow_stakeholders
+  module:
+    - link
+id: paragraph.block_slideshow_stakeholders.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: block_slideshow_stakeholders
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

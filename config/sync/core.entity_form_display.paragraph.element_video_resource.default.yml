@@ -1,0 +1,64 @@
+uuid: af971d6e-dcbc-4ad4-862d-486091904929
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_video_resource.field_caption
+    - field.field.paragraph.element_video_resource.field_image
+    - field.field.paragraph.element_video_resource.field_title
+    - field.field.paragraph.element_video_resource.field_video_link
+    - image.style.neshama_video_preview
+    - paragraphs.paragraphs_type.element_video_resource
+  module:
+    - image_widget_crop
+    - video_embed_field
+id: paragraph.element_video_resource.default
+targetEntityType: paragraph
+bundle: element_video_resource
+mode: default
+content:
+  field_caption:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_widget_crop
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: neshama_video_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - neshama_16_9
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_video_link:
+    type: video_embed_field_textfield
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,33 @@
+uuid: a8b20c6b-3aab-4c8f-b0ed-225eddff62cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: neshama_video_preview
+label: 'Neshama : Video preview'
+effects:
+  8285d520-4647-4f3a-8738-0662bb3c2441:
+    uuid: 8285d520-4647-4f3a-8738-0662bb3c2441
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  4b6627ef-a2b0-4590-b945-d27fa91fa6c6:
+    uuid: 4b6627ef-a2b0-4590-b945-d27fa91fa6c6
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  33e2821a-9a39-4c5d-b98e-2ef3556444a9:
+    uuid: 33e2821a-9a39-4c5d-b98e-2ef3556444a9
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 560
+      height: 315
+      anchor: center-center
+pipeline: optimize

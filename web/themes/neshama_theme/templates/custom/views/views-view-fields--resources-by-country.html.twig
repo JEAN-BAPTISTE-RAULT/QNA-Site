@@ -1,0 +1,59 @@
+{% set translated_entity = row._entity | translation %}
+
+<section class="block-documentation-content__container">
+	<div class="motif motif_primary motif_border"></div>
+	<div class="block-documentation-content__space">
+		<div class="block-documentation-content__item">
+			<div class="block-documentation-content__item-photo">
+				{% if translated_entity.fields.field_image is not empty %}
+					<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
+				{% else %}
+					PLACEHOLDER
+				{% endif %}
+			</div>
+			<div>
+				<div class="block-documentation-content__item-flag-container">
+					<div>{{ translated_entity.fields.changed.value|date('m/d/Y') }}</div>
+					{% set country_term = translated_entity.fields.field_country.entity %}
+					<div class="block-documentation-content__item-flag">
+						<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+					</div>
+				</div>
+				<div>
+					<h3>{{ translated_entity.fields.field_resource_title.value }}</h3>
+				</div>
+				<div class="block-documentation-content__item-text">
+					<p>{{ translated_entity.fields.field_resource_desc.value }}</p>
+				</div>
+				<div class="block-documentation-content__item-btn-container">
+					{% set link_field = translated_entity.field_link %}
+					{% if link_field is not empty and link_field.uri is not empty %}
+						{% set url = link_field.uri %}
+						{% set target = link_field.options.attributes.target ?? '_self' %}
+						{% set title = link_field.title ?? 'Resource link'|t %}
+						{% set is_new_window = target == '_blank' %}
+
+						<div>
+							<a href="{{ url }}" target="{{ target }}" {% if is_new_window %} rel="noopener noreferrer" {% endif %}>
+								{{ title }}
+								<i class="icon-site-internet" aria-hidden="true"></i>
+								{% if is_new_window %}
+									<span class="visually-hidden">{{ '(new window)'|t }}</span>
+								{% endif %}
+							</a>
+						</div>
+					{% endif %}
+					{% if translated_entity.fields.field_file is not empty and translated_entity.fields.field_file.entity is not empty %}
+						<div>
+							<a href="{{ file_url(translated_entity.fields.field_file.entity.fileuri) }}" download aria-label="{{ 'Download'|t }}">
+								{{ 'Download' | t }}
+								<i class="icon-download" aria-hidden="true"></i>
+							</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="motif-mobile motif-mobile_primary motif-mobile_size"></div>

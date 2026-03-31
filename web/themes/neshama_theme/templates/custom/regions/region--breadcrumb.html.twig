@@ -1,0 +1,11 @@
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+{% if content %}
+  <div class="block-breadcrumb__container" {{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

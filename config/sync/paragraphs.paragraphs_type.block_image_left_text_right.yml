@@ -1,0 +1,10 @@
+uuid: 939e317e-11f8-43d1-a9d5-4e84f3b9c9f5
+langcode: en
+status: true
+dependencies: {  }
+id: block_image_left_text_right
+label: 'Block : Image Left Text Right'
+icon_uuid: null
+icon_default: null
+description: 'Left = Image // Right = Element : Text'
+behavior_plugins: {  }

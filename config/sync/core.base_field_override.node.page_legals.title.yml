@@ -1,0 +1,18 @@
+uuid: c1cb2e7e-35d7-4bce-aef4-69b378b5059a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_legals
+id: node.page_legals.title
+field_name: title
+entity_type: node
+bundle: page_legals
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

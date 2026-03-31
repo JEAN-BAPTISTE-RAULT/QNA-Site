@@ -1,0 +1,31 @@
+uuid: 464fa50a-2740-4843-a226-8ea46169bc28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_left_aligned_text.field_description
+    - field.field.paragraph.block_left_aligned_text.field_title
+    - paragraphs.paragraphs_type.block_left_aligned_text
+  module:
+    - text
+id: paragraph.block_left_aligned_text.default
+targetEntityType: paragraph
+bundle: block_left_aligned_text
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

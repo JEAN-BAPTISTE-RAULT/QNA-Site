@@ -1,0 +1,8 @@
+uuid: 2a9f0689-5efb-4c7d-b77d-a137a85b05d6
+langcode: en
+status: true
+dependencies: {  }
+id: footer_logos
+label: 'Footer logos'
+revision: false
+description: 'Site logo + European logo'

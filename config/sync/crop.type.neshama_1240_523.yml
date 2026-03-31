@@ -1,0 +1,12 @@
+uuid: 00c9dd55-e4eb-463a-b2f4-c74ef8223757
+langcode: en
+status: true
+dependencies: {  }
+label: 'Neshama : 1240/523'
+id: neshama_1240_523
+description: ''
+aspect_ratio: '1240:523'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

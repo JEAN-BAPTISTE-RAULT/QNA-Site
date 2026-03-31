@@ -1,0 +1,53 @@
+uuid: ee15f827-b979-4bc2-9096-d453b4e6f3f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_resources_list.field_resources_deepen
+    - field.field.paragraph.block_resources_list.field_resources_docs
+    - field.field.paragraph.block_resources_list.field_resources_videos
+    - field.field.paragraph.block_resources_list.field_title
+    - paragraphs.paragraphs_type.block_resources_list
+  module:
+    - entity_reference_revisions
+id: paragraph.block_resources_list.default
+targetEntityType: paragraph
+bundle: block_resources_list
+mode: default
+content:
+  field_resources_deepen:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_resources_docs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_resources_videos:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

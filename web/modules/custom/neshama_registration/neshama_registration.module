@@ -1,0 +1,234 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\webform\WebformSubmissionForm;
+
+/**
+ * Implements hook_mail()
+ */
+function neshama_registration_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'participant_accept':
+      $message['subject'] = t('Neshama – Confirmation of your registration request');
+      $message['body'][] = $params['message'];
+      break;
+    case 'participant_refuse':
+      $message['subject'] = t('Neshama – Your registration request');
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_user_pass_reset_alter() to hide picture on password reset
+ */
+function neshama_registration_form_user_pass_reset_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['user_picture'])) {
+    $form['user_picture']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_user_form_alter() to hide picture on user edit page
+ */
+function neshama_registration_form_user_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['user_picture'])) {
+    $form['user_picture']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_user_login_form_alter() to change the layout of the page
+ */
+function neshama_registration_form_user_login_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // Remove the old "forgot_pass" button
+  if (isset($form['actions']['forgot_pass'])) {
+    unset($form['actions']['forgot_pass']);
+  }
+
+  // Title
+  $form['login_title'] = [
+    '#type' => 'markup',
+    '#markup' => '<h2 class="user-login__title">Login</h2>',
+    '#weight' => -100,
+  ];
+
+  // Username label
+  if (isset($form['name'])) {
+    $form['name']['#title'] = t('Your email');
+  }
+
+  // Password label + "Show/Hide password" toggle + "Forgot your password?" link
+  if (isset($form['pass'])) {
+    $form['pass']['#title'] = t('Your password');
+
+    $forgot_link = Link::fromTextAndUrl(t('Forgot your password?'), Url::fromRoute('user.pass'))->toString();
+
+    // Wrap the password input and place the toggle
+    $form['pass']['#prefix'] = '<div class="password-container"><div class="password-with-eye">';
+    $form['pass']['#suffix'] = '
+        <div class="password-toggle-wrapper">
+          <a href="#" class="password-toggle" aria-label="' . t('Show password') . '">' . t('Show password') . '</a>
+        </div>
+      </div>
+      <div class="user-login__forgot">' . $forgot_link . '</div>
+    </div>';
+  }
+
+  $image_url = \Drupal::service('file_url_generator')->generateString('public://login/login.png');
+
+  // Wrap the form
+  $existing_prefix = isset($form['#prefix']) ? $form['#prefix'] : '';
+  $existing_suffix = isset($form['#suffix']) ? $form['#suffix'] : '';
+
+  $form['#prefix'] = $existing_prefix .
+    '<div class="login-layout">
+       <div class="login-layout__left">';
+
+  $form['#suffix'] = '</div>
+       <div class="login-layout__right" role="img" aria-label="Login illustration">
+         <img src="' . $image_url . '" alt="" />
+       </div>
+     </div>' . $existing_suffix;
+
+  // Force redirect to homepage after successful login
+  // $form['actions']['submit']['#submit'][] = 'neshama_registration_user_login_redirect_submit';
+
+  // Attach libraries: eye toggle behavior + layout styles
+  $form['#attached']['library'][] = 'neshama_registration/login_eye';
+  $form['#attached']['library'][] = 'neshama_registration/login_layout';
+}
+
+/**
+ * Submit handler to redirect to home after login
+ */
+// function neshama_registration_user_login_redirect_submit(array &$form, FormStateInterface $form_state) {
+//   $request = \Drupal::requestStack()->getCurrentRequest();
+
+//   if ($request->query->has('destination')) {
+//     return;
+//   }
+  
+//   $form_state->setRedirectUrl(Url::fromRoute('<front>'));
+// }
+
+/**
+ * Implements hook_form_user_pass_alter() to change the layout of the page
+ */
+function neshama_registration_form_user_pass_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['name'])) {
+    // Change the label
+    $form['name']['#title'] = t('Your email');
+  }
+}
+
+/**
+ * Implements hook_theme() to register the account icon template
+ */
+function neshama_registration_theme() {
+  return [
+    // Existing account icon template
+    'neshama_registration_account_icon' => [
+      'template' => 'neshama-registration-account-icon',
+      'variables' => [
+        'logged_in' => NULL,
+        'login_url' => NULL,
+        'items'     => [],
+      ],
+    ],
+
+    // Page wrapper for /user/my-personal-data
+    'neshama_registration_personal_data' => [
+      'template' => 'neshama-registration-personal-data',
+      'variables' => [
+        'title'   => NULL,
+        'body'    => NULL,
+        'webform' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter() to alter the webform 'neshama_registration' when in update mode
+ */
+function neshama_registration_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+
+  // Only on webform submission forms
+  if (!$form_object instanceof WebformSubmissionForm) {
+    return;
+  }
+
+  /** @var \Drupal\webform\WebformSubmissionInterface $submission */
+  $submission = $form_object->getEntity();
+
+  // Only for the "neshama_registration" webform
+  if ($submission && $submission->getWebform()->id() == 'neshama_registration') {
+    $is_new = $submission->isNew();
+    $form_state->set('is_update', !$is_new);
+
+    // Prevent webform submission informations from being displayed
+    foreach ($form as $key => &$element) {
+      if (is_array($element) && isset($element['#type']) && $element['#type'] === 'webform_submission_information') {
+        $element['#access'] = FALSE;
+      }
+    }
+    unset($element);
+
+    // Only in update mode
+    if (!$submission->isNew()) {
+      // Disable title field
+      if (isset($form['elements']['identity']['flexbox']['title'])) {
+        $form['elements']['identity']['flexbox']['title']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox']['title']['#attributes']['disabled'] = 'disabled';
+      }
+
+      // Disable date of birth field
+      if (isset($form['elements']['identity']['flexbox']['date_of_birth'])) {
+        $form['elements']['identity']['flexbox']['date_of_birth']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox']['date_of_birth']['#attributes']['disabled'] = 'disabled';
+      }
+      
+      // Disable first name field
+      if (isset($form['elements']['identity']['flexbox_01']['first_name'])) {
+        $form['elements']['identity']['flexbox_01']['first_name']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox_01']['first_name']['#attributes']['disabled'] = 'disabled';
+      }
+      
+      // Disable last name field
+      if (isset($form['elements']['identity']['flexbox_01']['last_name'])) {
+        $form['elements']['identity']['flexbox_01']['last_name']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox_01']['last_name']['#attributes']['disabled'] = 'disabled';
+      }
+      
+      // Disable email field
+      if (isset($form['elements']['identity']['flexbox_02']['email_address'])) {
+        $form['elements']['identity']['flexbox_02']['email_address']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox_02']['email_address']['#attributes']['disabled'] = 'disabled';
+      }
+      
+      // Disable country field
+      if (isset($form['elements']['identity']['flexbox_02']['country'])) {
+        $form['elements']['identity']['flexbox_02']['country']['#disabled'] = TRUE;
+        $form['elements']['identity']['flexbox_02']['country']['#attributes']['disabled'] = 'disabled';
+      }
+
+      // Change submit button label
+      $form['actions']['submit']['#value'] = t('Update my informations');
+
+      // Add "Change my password" button
+      $form['actions']['change_password'] = [
+        '#type' => 'link',
+        '#title' => t('Change my password'),
+        '#url' => Url::fromRoute('entity.user.edit_form', ['user' => \Drupal::currentUser()->id()]),
+        '#attributes' => [
+          'class' => ['button', 'button--primary'],
+        ],
+        '#weight' => 101,
+      ];
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section class="block-slideshow-textleft-rightimg__container" {{attributes.addClass(classes)}}>
+		{% block content %}
+			<div class="block-slideshow-textleft-rightimg__orange-block">
+				<i class="icon-image" aria-hidden="true"></i>
+				<h3>{{'Gallery'|t}}</h3>
+				<div>
+					<button name="navigation" class="swiper-btn-prev" aria-label="{{'Previous slide' |t}}" class="swiper-btn-prev">
+						<i class="icon-chevron-right" aria-hidden="true"></i>
+					</button>
+					<button name="navigation" class="swiper-btn-next" aria-label="{{'Next slide' |t}}" class="swiper-btn-next">
+						<i class="icon-chevron-right" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div class="swiper" navigation=".swiper-btn" slide-views="1" has-breakpoints="false" allow-touch="false">
+					<div class="swiper-wrapper">
+						{% for item in paragraph.field_images_list %}
+							{% set slide = item.entity %}
+							{% if slide.field_caption.value is not empty %}
+								<div class="swiper-slide">
+									<div class="block-slideshow-textleft-rightimg__text">
+										{{ slide.field_caption.value | raw }}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="block-slideshow-textleft-rightimg__img-container">
+				<div class="swiper" navigation=".swiper-btn" slide-views="1" has-breakpoints="false" allow-touch="false">
+					<div class="swiper-wrapper">
+						{% for item in paragraph.field_images_list %}
+							{% set slide = item.entity %}
+
+							<div class="swiper-slide">
+								<div class="block-slideshow-textleft-rightimg__img">
+									<img src="{{ slide.field_image.entity.fileuri | image_style('neshama_video_preview') }}" width="16" height="9" alt="{{ slide.field_image.alt|default('') }}"/>
+								</div>
+							</div>
+
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	</section>
+{% endblock paragraph %}
+
+{{ attach_library('neshama_theme/swiper') }}

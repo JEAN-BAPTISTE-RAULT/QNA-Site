@@ -1,0 +1,22 @@
+uuid: c4882c40-b2b4-4e23-9d67-718df217438d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.block_session_details
+  module:
+    - text
+id: paragraph.block_session_details.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: block_session_details
+label: 'Lecturer biography'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

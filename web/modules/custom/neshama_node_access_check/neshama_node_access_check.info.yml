@@ -1,0 +1,5 @@
+name: Node access check
+type: module
+description: Prevent nodes from being accessible via URL
+core_version_requirement: ^11
+package: Neshama

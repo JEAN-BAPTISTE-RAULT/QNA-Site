@@ -1,0 +1,27 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<div{{attributes.addClass(classes)}}>
+	{% set link = paragraph.field_link %}
+	{% set uniqId = random() ~ date().timestamp %}
+		{% block content %}
+			<div id="v-btn-{{uniqId}}" class="d-flex gap-3 align-items-center cursor-pointer">
+				<div class="element__video-video">
+					<img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_video_preview') }}" width="16" height="9" alt="{{ paragraph.field_image.alt|default('') }}"/>
+				</div>
+				<div>
+					{{ paragraph.field_title.value }}
+				</div>
+			</div>
+			<template class="tempalte-modal-video-content" modal-id="{{uniqId}}" button-selector="#v-btn-" modal-selector="#v-modal-">
+				{{ paragraph.field_video_link | view }}
+			</template>
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

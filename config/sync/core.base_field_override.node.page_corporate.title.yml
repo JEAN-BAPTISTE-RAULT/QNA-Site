@@ -1,0 +1,18 @@
+uuid: 89ca2a1b-ec77-4852-ac3b-d994304f4d1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_corporate
+id: node.page_corporate.title
+field_name: title
+entity_type: node
+bundle: page_corporate
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

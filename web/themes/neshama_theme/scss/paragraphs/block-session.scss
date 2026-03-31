@@ -1,0 +1,81 @@
+@use '../breakpoints' as *;
+
+.session-details {
+    &__block {
+        padding: 0px 0px 0px 206px;
+
+        @include breakpoint-down-lg {
+            padding: 0;
+            display: initial !important;
+        }
+    }
+
+    &__left-content {
+        padding-top: 57px;
+
+        h4 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        @include breakpoint-down-lg {
+            padding: 30px 20px;
+        }
+
+        &__content {
+            margin-top: 40px;
+        }
+    }
+
+    &__right-content {
+        padding: 57px 30px 19px;
+        background-color: var(--n-utility-4);
+        width: 100%;
+        color: white;
+        border-right: solid var(--n-secondary) 100px;
+
+        @include breakpoint-down-lg {
+            padding: 22px 20px 25px;
+        }
+
+        h4 {
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 35px;
+        }
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+
+        &__function {
+            padding: 19px 0px 20px;
+
+            span {
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 25px;
+            }
+        }
+
+        &__paragraph {
+            p {
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 25px;
+            }
+        }
+
+        &__img-container {
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            padding-bottom: 22px;
+        }
+    }
+}

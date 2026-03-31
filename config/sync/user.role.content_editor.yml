@@ -1,0 +1,30 @@
+uuid: 7dee6656-0876-4ec1-befd-9801488bb5cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - file
+    - node
+    - path
+    - system
+    - toolbar
+_core:
+  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'delete own files'
+  - 'edit own comments'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

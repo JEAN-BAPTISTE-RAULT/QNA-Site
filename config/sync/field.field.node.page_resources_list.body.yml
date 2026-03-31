@@ -1,0 +1,24 @@
+uuid: 2979a2c6-1d8d-439f-a049-c93b396cd977
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_resources_list
+  module:
+    - text
+id: node.page_resources_list.body
+field_name: body
+entity_type: node
+bundle: page_resources_list
+label: 'Page description'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

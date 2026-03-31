@@ -1,0 +1,18 @@
+uuid: 50fcab47-9ea9-4ffd-ae57-5fbf3a012577
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_partners
+id: node.page_partners.title
+field_name: title
+entity_type: node
+bundle: page_partners
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

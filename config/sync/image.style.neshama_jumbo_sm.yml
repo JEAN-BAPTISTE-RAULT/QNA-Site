@@ -1,0 +1,33 @@
+uuid: 6dfa87fa-2daf-4c3c-a88f-49860fbf9311
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_1240_523
+  module:
+    - crop
+name: neshama_jumbo_sm
+label: 'Neshama : Jumbo - SM'
+effects:
+  2ed96e40-ff16-44e4-9dce-a03ac5125df5:
+    uuid: 2ed96e40-ff16-44e4-9dce-a03ac5125df5
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: neshama_1240_523
+      automatic_crop_provider: null
+  640dce84-fc02-4307-b593-750187f00bd8:
+    uuid: 640dce84-fc02-4307-b593-750187f00bd8
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  ee82bff5-bc76-449b-8bb8-6b5c69f48bc6:
+    uuid: ee82bff5-bc76-449b-8bb8-6b5c69f48bc6
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 567
+      height: 239
+      anchor: center-center
+pipeline: optimize

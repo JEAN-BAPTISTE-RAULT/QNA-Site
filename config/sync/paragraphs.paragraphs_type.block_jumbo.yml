@@ -1,0 +1,10 @@
+uuid: 2239e149-abeb-443f-b8de-cbbadbe8e417
+langcode: en
+status: true
+dependencies: {  }
+id: block_jumbo
+label: 'Block : Jumbo'
+icon_uuid: null
+icon_default: null
+description: 'Image + Title + Subtitle + Description + Link'
+behavior_plugins: {  }

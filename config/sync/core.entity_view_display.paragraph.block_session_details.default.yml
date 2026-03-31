@@ -1,0 +1,69 @@
+uuid: 7ccf2250-a977-446e-951f-06000647aff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_session_details.field_description
+    - field.field.paragraph.block_session_details.field_image
+    - field.field.paragraph.block_session_details.field_learning_objectives
+    - field.field.paragraph.block_session_details.field_lecture_content
+    - field.field.paragraph.block_session_details.field_role
+    - field.field.paragraph.block_session_details.field_title
+    - paragraphs.paragraphs_type.block_session_details
+  module:
+    - image
+    - text
+id: paragraph.block_session_details.default
+targetEntityType: paragraph
+bundle: block_session_details
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_learning_objectives:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lecture_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_role:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

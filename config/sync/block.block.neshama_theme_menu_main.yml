@@ -1,0 +1,25 @@
+uuid: b8e4aaaa-cc6a-4b1a-a22d-847c121f930b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - neshama_theme
+id: neshama_theme_menu_main
+theme: neshama_theme
+region: header_nav
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: 60309df6-0533-43b8-bb94-bc918ff98a44
+langcode: en
+status: true
+dependencies: {  }
+id: element_link_resource
+label: 'Element : Link Resource'
+icon_uuid: null
+icon_default: null
+description: Link
+behavior_plugins: {  }

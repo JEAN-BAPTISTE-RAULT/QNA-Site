@@ -1,0 +1,29 @@
+uuid: 5a6e2205-8837-40fb-97b2-bc71e9f6b635
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edition
+    - node.type.testimony
+    - taxonomy.vocabulary.edition
+id: node.testimony.field_edition
+field_name: field_edition
+entity_type: node
+bundle: testimony
+label: Edition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      edition: edition
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

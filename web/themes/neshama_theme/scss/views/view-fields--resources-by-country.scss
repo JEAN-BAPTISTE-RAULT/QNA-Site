@@ -1,0 +1,117 @@
+@use '../breakpoints' as *;
+
+.block-documentation-content {
+    &__container {
+        display: flex;
+        border-right: solid var(--n-secondary) 100px;
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+    }
+
+    &__space {
+        padding: 40px 106px;
+        flex: 1;
+
+        @include breakpoint-down-lg {
+            padding: 30px 20px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        width: 90%;
+        gap: 1rem;
+
+        @include breakpoint-down-lg {
+            display: inherit;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            margin-bottom: 5px;
+            margin-top: 6px;
+        }
+
+        &-btn-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            a {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                text-decoration: none;
+                text-transform: none;
+                color: black;
+            }
+
+            i {
+                margin-right: 6px;
+                font-size: 20px;
+            }
+        }
+
+        &-photo {
+            width: 70%;
+            height: 220px;
+
+            @include breakpoint-down-lg {
+                width: 100%;
+                margin-bottom: 18px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-flag-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-flag {
+            max-width: 24px;
+            width: 100%;
+            padding: 15px 0px 10px;
+            display: none;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &-text {
+            margin-bottom: 29px;
+
+            p {
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 25px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.motif-mobile {
+    display: none;
+
+    @include breakpoint-down-lg {
+        display: block;
+    }
+}

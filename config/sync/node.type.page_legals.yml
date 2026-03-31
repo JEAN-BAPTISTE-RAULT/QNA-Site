@@ -1,0 +1,17 @@
+uuid: 1166bda1-5916-4ea6-9fd9-737df2c21a1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Page : Legals'
+type: page_legals
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

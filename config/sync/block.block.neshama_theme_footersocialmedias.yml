@@ -1,0 +1,25 @@
+uuid: 9cace43d-6d6f-4528-8130-0299874ada56
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_social_medias:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+  module:
+    - block_content
+  theme:
+    - neshama_theme
+id: neshama_theme_footersocialmedias
+theme: neshama_theme
+region: footer_nav
+weight: -2
+provider: null
+plugin: 'block_content:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+settings:
+  id: 'block_content:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+  label: 'Footer social medias'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

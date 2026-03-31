@@ -1,0 +1,33 @@
+uuid: 0ca5851d-2550-4257-a7fe-d615826929f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_no_ratio
+  module:
+    - crop
+name: neshama_image_50
+label: 'Neshama : Image 50%'
+effects:
+  dc3dd665-804d-4064-9dc2-f8e1a9b45432:
+    uuid: dc3dd665-804d-4064-9dc2-f8e1a9b45432
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: neshama_no_ratio
+      automatic_crop_provider: null
+  85f677c0-e6c1-4da9-9a4e-8bb75777e8e2:
+    uuid: 85f677c0-e6c1-4da9-9a4e-8bb75777e8e2
+    id: image_scale
+    weight: 2
+    data:
+      width: 400
+      height: null
+      upscale: true
+  24ff00b1-7814-4f03-8f9b-01e0ff7e95f1:
+    uuid: 24ff00b1-7814-4f03-8f9b-01e0ff7e95f1
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
+pipeline: optimize

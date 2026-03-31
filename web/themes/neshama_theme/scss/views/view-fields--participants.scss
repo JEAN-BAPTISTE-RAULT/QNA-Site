@@ -1,0 +1,25 @@
+.view-fields-participants {
+    .ratio {
+        --bs-aspect-ratio: 55.75%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__flag {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__text {
+        font-size: 15px;
+        font-weight: 400;
+    }
+}

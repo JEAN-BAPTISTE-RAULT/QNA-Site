@@ -1,0 +1,29 @@
+uuid: 973de1cb-acb0-4e5f-a39e-8dc9eae000e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.page_resources_list
+    - taxonomy.vocabulary.countries
+id: node.page_resources_list.field_country
+field_name: field_country
+entity_type: node
+bundle: page_resources_list
+label: Country
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

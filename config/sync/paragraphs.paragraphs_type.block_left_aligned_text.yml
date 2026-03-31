@@ -1,0 +1,10 @@
+uuid: e5ae96fd-463b-4c01-b8f7-bde435e7e08f
+langcode: en
+status: true
+dependencies: {  }
+id: block_left_aligned_text
+label: 'Block : Left-Aligned Text'
+icon_uuid: null
+icon_default: null
+description: 'Title + Description'
+behavior_plugins: {  }

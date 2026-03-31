@@ -1,0 +1,10 @@
+uuid: 9a5776e1-2936-4a26-b3ce-3d34185bd326
+langcode: en
+status: true
+dependencies: {  }
+id: block_resources_list
+label: 'Block : Resources list'
+icon_uuid: null
+icon_default: null
+description: 'Title + List of Element : Documentary Resource + Element : Link Resource + Element : Video Resource'
+behavior_plugins: {  }

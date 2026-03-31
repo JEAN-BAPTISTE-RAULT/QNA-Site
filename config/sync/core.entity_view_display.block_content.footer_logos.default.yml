@@ -1,0 +1,39 @@
+uuid: b48ddad8-f0ef-4b89-92b9-2516ffd81aa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logos
+    - field.field.block_content.footer_logos.field_image
+    - field.field.block_content.footer_logos.field_logo
+  module:
+    - image
+id: block_content.footer_logos.default
+targetEntityType: block_content
+bundle: footer_logos
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

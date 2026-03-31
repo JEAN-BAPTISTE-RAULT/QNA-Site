@@ -1,0 +1,79 @@
+uuid: 7bda1d1b-20f6-4ad3-9405-47cc2f89da55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_element_1
+    - paragraphs.paragraphs_type.block_text_left_image_right
+    - paragraphs.paragraphs_type.element_text
+  module:
+    - entity_reference_revisions
+id: paragraph.block_text_left_image_right.field_text_element_1
+field_name: field_text_element_1
+entity_type: paragraph
+bundle: block_text_left_image_right
+label: 'Left column'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      element_text: element_text
+    negate: 0
+    target_bundles_drag_drop:
+      block_2_columns_text:
+        weight: 3
+        enabled: false
+      block_centered_image_large:
+        weight: 19
+        enabled: false
+      block_centered_image_medium:
+        weight: 20
+        enabled: false
+      block_image_left_text_right:
+        weight: 21
+        enabled: false
+      block_instructor:
+        weight: 22
+        enabled: false
+      block_jumbo:
+        weight: 23
+        enabled: false
+      block_left_aligned_text:
+        weight: 24
+        enabled: false
+      block_partner:
+        weight: 25
+        enabled: false
+      block_resources_list:
+        weight: 26
+        enabled: false
+      block_session:
+        weight: 27
+        enabled: false
+      block_slideshow:
+        weight: 28
+        enabled: false
+      block_text_left_image_right:
+        weight: 5
+        enabled: false
+      block_video:
+        weight: 30
+        enabled: false
+      element_documentary_resource:
+        weight: 31
+        enabled: false
+      element_link_resource:
+        weight: 32
+        enabled: false
+      element_text:
+        weight: 4
+        enabled: true
+      element_video_resource:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

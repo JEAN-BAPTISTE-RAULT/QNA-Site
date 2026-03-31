@@ -1,0 +1,43 @@
+uuid: 4a1b23c4-93aa-4d83-abf4-46fbeb01d659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_registration.body
+    - field.field.node.page_registration.field_metatags
+    - field.field.node.page_registration.field_page_title
+    - node.type.page_registration
+  module:
+    - metatag
+    - text
+    - user
+id: node.page_registration.default
+targetEntityType: node
+bundle: page_registration
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true

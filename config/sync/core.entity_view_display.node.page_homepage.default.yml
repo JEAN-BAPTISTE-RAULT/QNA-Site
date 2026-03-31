@@ -1,0 +1,45 @@
+uuid: d4feab78-8733-40cd-8023-84bc374c0917
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_homepage.body
+    - field.field.node.page_homepage.field_metatags
+    - field.field.node.page_homepage.field_paragraphs
+    - node.type.page_homepage
+  module:
+    - entity_reference_revisions
+    - metatag
+    - text
+    - user
+id: node.page_homepage.default
+targetEntityType: node
+bundle: page_homepage
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  links: true

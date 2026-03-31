@@ -1,0 +1,30 @@
+uuid: 08ca1f43-5c44-44a5-803f-780e5e41a5d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_link_resource.field_link
+    - paragraphs.paragraphs_type.element_link_resource
+  module:
+    - link
+id: paragraph.element_link_resource.default
+targetEntityType: paragraph
+bundle: element_link_resource
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

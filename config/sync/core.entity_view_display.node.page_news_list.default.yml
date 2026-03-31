@@ -1,0 +1,54 @@
+uuid: 47df5646-1776-48e5-aa76-d7257db82e60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_news_list.body
+    - field.field.node.page_news_list.field_metatags
+    - field.field.node.page_news_list.field_page_title
+    - field.field.node.page_news_list.field_share_on_social_medias
+    - node.type.page_news_list
+  module:
+    - metatag
+    - text
+    - user
+id: node.page_news_list.default
+targetEntityType: node
+bundle: page_news_list
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_share_on_social_medias:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  links: true

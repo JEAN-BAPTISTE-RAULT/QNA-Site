@@ -1,0 +1,19 @@
+uuid: a9d59809-5c44-464f-9dd9-c3376d9022d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title
+    - node.type.testimony
+id: node.testimony.field_page_title
+field_name: field_page_title
+entity_type: node
+bundle: testimony
+label: 'Page title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

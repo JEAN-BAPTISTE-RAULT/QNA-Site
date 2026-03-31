@@ -1,0 +1,20 @@
+uuid: 5ac12bab-a50d-413d-9712-255f7fdd304a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - neshama_theme
+id: neshama_theme_tabs
+theme: neshama_theme
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: e6821f4f-1125-4165-962d-0a11c273149f
+langcode: en
+status: true
+dependencies: {  }
+id: block_slideshow
+label: 'Block : Slideshow'
+icon_uuid: null
+icon_default: null
+description: 'Slideshow of Element : Item slideshow'
+behavior_plugins: {  }

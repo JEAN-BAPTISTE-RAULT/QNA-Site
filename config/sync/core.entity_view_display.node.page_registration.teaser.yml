@@ -1,0 +1,35 @@
+uuid: 21f5d873-8099-45d2-b20a-1bb087e187fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_registration.body
+    - field.field.node.page_registration.field_metatags
+    - field.field.node.page_registration.field_page_title
+    - node.type.page_registration
+  module:
+    - text
+    - user
+id: node.page_registration.teaser
+targetEntityType: node
+bundle: page_registration
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_metatags: true
+  field_page_title: true
+  langcode: true

@@ -1,0 +1,35 @@
+uuid: f2c85113-93b4-4782-902e-891454a719e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_contact.body
+    - field.field.node.page_contact.field_metatags
+    - field.field.node.page_contact.field_page_title
+    - node.type.page_contact
+  module:
+    - text
+    - user
+id: node.page_contact.teaser
+targetEntityType: node
+bundle: page_contact
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_metatags: true
+  field_page_title: true
+  langcode: true

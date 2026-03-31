@@ -1,0 +1,41 @@
+uuid: 62fdd53d-cce5-44c4-af42-f0c48d6d2df0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.testimony.body
+    - field.field.node.testimony.field_edition
+    - field.field.node.testimony.field_metatags
+    - field.field.node.testimony.field_page_title
+    - field.field.node.testimony.field_paragraphs
+    - field.field.node.testimony.field_share_on_social_medias
+    - node.type.testimony
+  module:
+    - text
+    - user
+id: node.testimony.teaser
+targetEntityType: node
+bundle: testimony
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_edition: true
+  field_metatags: true
+  field_page_title: true
+  field_paragraphs: true
+  field_share_on_social_medias: true
+  langcode: true

@@ -1,0 +1,127 @@
+@use '../breakpoints' as *;
+
+.node-partners {
+    &__block {
+        .block-header {
+            &__text {
+                padding-bottom: 77px;
+
+                @include breakpoint-down-lg {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        border-right: 100px var(--n-secondary) solid;
+
+        .swiper {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+
+            .swiper-wrapper {
+                margin-left: 0 !important;
+                transform: translate3d(0px, 0, 0) !important;
+            }
+        }
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+    }
+
+    &__space {
+        padding: 0px 106px 77px 106px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        flex: 1;
+
+        @include breakpoint-down-lg {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 30px;
+            padding: 30px 20px 35px 20px;
+        }
+
+        @include breakpoint-down-lg {
+            padding: 30px 20px 35px;
+        }
+    }
+
+    &__content {
+        width: 35%;
+
+        @include breakpoint-down-lg {
+            width: 100%;
+        }
+
+        .block-partner {
+            &__item {
+                padding-bottom: 40px;
+
+                h3 {
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: none;
+                    color: black;
+
+                    i {
+                        margin-right: 6px;
+                        font-size: 20px;
+                    }
+                }
+
+                &-photo {
+                    max-width: 600px;
+                    width: 100%;
+                    height: 220px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                &-flag {
+                    max-width: 24px;
+                    width: 100%;
+                    padding: 15px 0px 10px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                &-text {
+                    margin-bottom: 29px;
+
+                    p {
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 25px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

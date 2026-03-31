@@ -1,0 +1,11 @@
+uuid: 84d3d339-689e-42f2-bd99-b3030620e89a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_no_ratio
+id: crop.neshama_no_ratio
+target_entity_type_id: crop
+target_bundle: neshama_no_ratio
+default_langcode: site_default
+language_alterable: false

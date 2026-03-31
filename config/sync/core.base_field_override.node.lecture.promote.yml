@@ -1,0 +1,22 @@
+uuid: 60655d82-3a2b-4011-bca0-cc0c06f7cf70
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lecture
+id: node.lecture.promote
+field_name: promote
+entity_type: node
+bundle: lecture
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

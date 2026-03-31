@@ -1,0 +1,17 @@
+uuid: 61d28745-f2aa-4a2a-a785-64288218dfa7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Testimony
+type: testimony
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,18 @@
+uuid: 81069d05-a952-4107-a660-5c9d27738662
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_homepage
+id: node.page_homepage.title
+field_name: title
+entity_type: node
+bundle: page_homepage
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

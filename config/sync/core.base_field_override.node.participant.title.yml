@@ -1,0 +1,18 @@
+uuid: 89bd0c80-137c-48bb-b010-c3b22ca5c60d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.participant
+id: node.participant.title
+field_name: title
+entity_type: node
+bundle: participant
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

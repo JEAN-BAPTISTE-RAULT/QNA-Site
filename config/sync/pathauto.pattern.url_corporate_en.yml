@@ -1,0 +1,22 @@
+uuid: 5be653f9-23d8-4497-9fb1-4ce8c04f1b46
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: url_corporate_en
+label: 'URL Corporate EN'
+type: 'canonical_entities:node'
+pattern: '/[node:field_page_title]'
+selection_criteria:
+  975e15da-0a30-4742-9217-2dc3773bbc79:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 975e15da-0a30-4742-9217-2dc3773bbc79
+    context_mapping:
+      node: node
+    bundles:
+      page_corporate: page_corporate
+selection_logic: and
+weight: -5
+relationships: {  }

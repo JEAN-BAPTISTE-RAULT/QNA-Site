@@ -1,0 +1,93 @@
+uuid: 319bd80b-1b14-4906-b33c-9597b9c4925b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.news
+    - paragraphs.paragraphs_type.block_2_columns_text
+    - paragraphs.paragraphs_type.block_centered_image_large
+    - paragraphs.paragraphs_type.block_image_left_text_right
+    - paragraphs.paragraphs_type.block_left_aligned_text
+    - paragraphs.paragraphs_type.block_resources_list
+    - paragraphs.paragraphs_type.block_slideshow
+    - paragraphs.paragraphs_type.block_text_left_image_right
+    - paragraphs.paragraphs_type.block_video
+  module:
+    - entity_reference_revisions
+id: node.news.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: news
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      block_2_columns_text: block_2_columns_text
+      block_centered_image_large: block_centered_image_large
+      block_image_left_text_right: block_image_left_text_right
+      block_left_aligned_text: block_left_aligned_text
+      block_resources_list: block_resources_list
+      block_slideshow: block_slideshow
+      block_text_left_image_right: block_text_left_image_right
+      block_video: block_video
+    negate: 0
+    target_bundles_drag_drop:
+      block_2_columns_text:
+        weight: 18
+        enabled: true
+      block_centered_image_large:
+        weight: 19
+        enabled: true
+      block_centered_image_medium:
+        weight: 20
+        enabled: true
+      block_image_left_text_right:
+        weight: 21
+        enabled: true
+      block_instructor:
+        weight: 22
+        enabled: false
+      block_jumbo:
+        weight: 23
+        enabled: false
+      block_left_aligned_text:
+        weight: 24
+        enabled: true
+      block_partner:
+        weight: 25
+        enabled: false
+      block_resources_list:
+        weight: 26
+        enabled: true
+      block_session:
+        weight: 27
+        enabled: false
+      block_slideshow:
+        weight: 28
+        enabled: true
+      block_text_left_image_right:
+        weight: 29
+        enabled: true
+      block_video:
+        weight: 30
+        enabled: true
+      element_documentary_resource:
+        weight: 31
+        enabled: false
+      element_link_resource:
+        weight: 32
+        enabled: false
+      element_text:
+        weight: 33
+        enabled: false
+      element_video_resource:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,10 @@
+uuid: 38306489-854c-4b44-8093-3fe52c0ac99d
+langcode: en
+status: true
+dependencies: {  }
+id: block_partner
+label: 'Block : Stakeholder'
+icon_uuid: null
+icon_default: null
+description: 'Name + Country + Logo + Description + Link + File '
+behavior_plugins: {  }

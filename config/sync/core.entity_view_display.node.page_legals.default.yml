@@ -1,0 +1,43 @@
+uuid: 1d13989c-0756-4ca6-9932-9711c4974cf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_legals.body
+    - field.field.node.page_legals.field_metatags
+    - field.field.node.page_legals.field_page_title
+    - node.type.page_legals
+  module:
+    - metatag
+    - text
+    - user
+id: node.page_legals.default
+targetEntityType: node
+bundle: page_legals
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  links: true

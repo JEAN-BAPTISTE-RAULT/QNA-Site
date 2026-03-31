@@ -1,0 +1,17 @@
+uuid: f0b8c51e-290b-40da-b6ea-21cc78a35a06
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Page : Participants'
+type: page_participants
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

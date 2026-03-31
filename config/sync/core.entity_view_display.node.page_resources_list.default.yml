@@ -1,0 +1,63 @@
+uuid: 15c57ee5-f205-4da2-b391-97c98cbb446c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_resources_list.body
+    - field.field.node.page_resources_list.field_country
+    - field.field.node.page_resources_list.field_metatags
+    - field.field.node.page_resources_list.field_page_title
+    - field.field.node.page_resources_list.field_share_on_social_medias
+    - node.type.page_resources_list
+  module:
+    - metatag
+    - text
+    - user
+id: node.page_resources_list.default
+targetEntityType: node
+bundle: page_resources_list
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_share_on_social_medias:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  links: true

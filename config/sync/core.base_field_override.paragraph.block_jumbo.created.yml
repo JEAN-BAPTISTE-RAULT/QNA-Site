@@ -1,0 +1,18 @@
+uuid: e9b8a582-6242-4e3d-81c6-7cac0263b8bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.block_jumbo
+id: paragraph.block_jumbo.created
+field_name: created
+entity_type: paragraph
+bundle: block_jumbo
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,10 @@
+uuid: 54118f9f-3b8c-4ac1-8686-cff5f676e4c2
+langcode: en
+status: true
+dependencies: {  }
+id: element_documentary_resource
+label: 'Element : Documentary Resource'
+icon_uuid: null
+icon_default: null
+description: 'Name + File'
+behavior_plugins: {  }

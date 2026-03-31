@@ -1,0 +1,17 @@
+.menu {
+    &__tasks {
+        position: fixed;
+        right: 0;
+        top: calc(105px + var(--drupal-displace-offset-top));
+        background-color: white;
+        z-index: 1000;
+        max-width: 100px;
+        width: 100%;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@use '../breakpoints' as *;
+
+.personal-data__container {
+    .page-registration {
+        &__header {
+            border-left: solid var(--n-primary) 100px;
+            padding: 41px 106px 31px 106px;
+            flex: 1;
+
+            @include breakpoint-down-lg {
+                border: none;
+                padding: 50px 20px 30px;
+            }
+        }
+
+        &__space {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__form {
+            display: flex;
+
+            #webform-submission-neshama-registration-node-54-form-ajax {
+                padding: 42px 105px;
+                flex: 1;
+                border-right: 100px var(--n-secondary) solid;
+                background-color: var(--n-utility-2);
+
+                @include breakpoint-down-lg {
+                    padding: 31px 20px;
+                    border: none;
+                }
+            }
+
+            form {
+
+                label,
+                #edit-title--description,
+                #edit-email-address--description,
+                #edit-date-of-birth--description,
+                #edit-country--description,
+                #edit-about-me--description {
+                    margin-bottom: 8px;
+                }
+
+                section[data-drupal-selector="edit-my-personal-details"] {
+                    margin-top: 70px;
+                }
+
+                input,
+                select,
+                textarea {
+                    padding: 12px;
+                    border: 1px #BDBDBD solid;
+                    outline: none;
+                    padding-right: 40px;
+                    border-radius: 0;
+                    background-color: white;
+                    font-size: 15px;
+
+                    &[disabled] {
+                        opacity: .75;
+                    }
+
+                    @include breakpoint-down-lg {
+                        width: 100%;
+                    }
+                }
+
+                .webform-section-title {
+                    margin-bottom: 30px;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 28px;
+                }
+
+                input[type="submit"],
+                a[data-drupal-selector="edit-change-password"] {
+                    background-color: var(--n-primary);
+                    width: 230px;
+                    padding: 5px 25px;
+                    border-radius: 90px;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 40px;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    border: none;
+                    margin-bottom: 45px;
+
+                    @include breakpoint-down-lg {
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                input[type='submit'] {
+                    &#edit-profile-picture-remove-button {
+                        background-color: transparent;
+                        padding: 0;
+                        text-decoration: underline;
+                        color: var(--n-primary);
+                        margin: 0;
+                        width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+
+                input[type="submit"]:hover {
+                    background-color: var(--n-secondary);
+                    color: black;
+                }
+
+                .js-form-type-checkbox {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        width: 15px;
+                        height: 15px;
+                        margin-right: 15px;
+                    }
+
+                    .js-form-required {
+                        font-size: 14px;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                a[data-drupal-selector="edit-change-password"] {
+                    background-color: transparent;
+                    border: 2px var(--n-primary) solid;
+                    padding: 13px 25px;
+                    color: var(--n-primary);
+
+                    @include breakpoint-down-lg {
+                        display: block;
+                        padding: 2px 25px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

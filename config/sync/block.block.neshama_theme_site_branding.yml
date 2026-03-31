@@ -1,0 +1,25 @@
+uuid: 4d444090-b594-4eab-a710-8ab3ba2b3643
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - neshama_theme
+_core:
+  default_config_hash: '-OAAZDw1OR_UyAEPEKX0Hu4LaZD149vW9PmMnIC-v0o'
+id: neshama_theme_site_branding
+theme: neshama_theme
+region: branding
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

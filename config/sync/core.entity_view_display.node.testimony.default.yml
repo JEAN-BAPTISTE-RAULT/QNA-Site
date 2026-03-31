@@ -1,0 +1,60 @@
+uuid: 196d6ca8-53e8-44b2-a1e3-764090a2a15b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.testimony.body
+    - field.field.node.testimony.field_edition
+    - field.field.node.testimony.field_metatags
+    - field.field.node.testimony.field_page_title
+    - field.field.node.testimony.field_paragraphs
+    - field.field.node.testimony.field_share_on_social_medias
+    - node.type.testimony
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.testimony.default
+targetEntityType: node
+bundle: testimony
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_share_on_social_medias:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_edition: true
+  field_metatags: true
+  langcode: true
+  links: true

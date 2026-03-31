@@ -1,0 +1,29 @@
+neshama_theme.sm:
+  label: sm
+  mediaQuery: '(min-width: 0px)'
+  weight: 0
+  multipliers: [1x, 2x]
+
+neshama_theme.md:
+  label: md
+  mediaQuery: '(min-width: 568px)'
+  weight: 1
+  multipliers: [1x, 2x]
+
+neshama_theme.lg:
+  label: lg
+  mediaQuery: '(min-width: 769px)'
+  weight: 2
+  multipliers: [1x, 2x]
+
+neshama_theme.xl:
+  label: xl
+  mediaQuery: '(min-width: 993px)'
+  weight: 3
+  multipliers: [1x, 2x]
+
+neshama_theme.xxl:
+  label: xxl
+  mediaQuery: '(min-width: 1201px)'
+  weight: 4
+  multipliers: [1x, 2x]

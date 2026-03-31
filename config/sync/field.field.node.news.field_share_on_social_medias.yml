@@ -1,0 +1,23 @@
+uuid: e39b2360-c1ed-4ca1-be53-724b88bf3a74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_share_on_social_medias
+    - node.type.news
+id: node.news.field_share_on_social_medias
+field_name: field_share_on_social_medias
+entity_type: node
+bundle: news
+label: 'Share on social medias'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

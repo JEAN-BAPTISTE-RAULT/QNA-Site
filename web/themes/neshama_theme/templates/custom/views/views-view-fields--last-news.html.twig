@@ -1,0 +1,73 @@
+{% set translated_entity = row._entity | translation %}
+
+{% if translated_entity.fields.field_boolean.value %}
+	<section class="last-news-container">
+		<div class="last-news-img-container">
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
+		</div>
+		<div class="last-news-text-container">
+			<div class="mobile_grid">
+				<div class="last-news-date">{{ translated_entity.changed.value|date('m/d/Y') }}</div>
+
+				{% set country_term = translated_entity.fields.field_country.entity %}
+				<div class="mobile_flag_container d-none">
+					<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+				</div>
+			</div>
+			<div>
+				<h3>
+					{{ translated_entity.fields.field_page_title.0.value|length > 80
+						? translated_entity.fields.field_page_title.0.value|slice(0, 80) ~ '…'
+						: translated_entity.fields.field_page_title.0.value }}
+				</h3>
+			</div>
+			<div class="last-news-footer-container">
+				<div>
+					<a href="{{ path('entity.node.canonical', {'node': translated_entity.nid.value}) }}">
+						{{ 'Read the news' | t }}
+						<i class="icon-arrow-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				{% set country_term = translated_entity.fields.field_country.entity %}
+				<div class="pc_flag_container">
+					<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+				</div>
+			</div>
+		</div>
+	</section>
+{% else %}
+	<section class="last-news-container">
+		<div class="last-news-img-container">
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
+		</div>
+		<div class="last-news-text-container">
+			<div class="mobile_grid">
+				<div class="last-news-date">{{ translated_entity.changed.value|date('m/d/Y') }}</div>
+
+				{% set country_term = translated_entity.fields.field_country.entity %}
+				<div class="mobile_flag_container d-none">
+					<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+				</div>
+			</div>
+			<div>
+				<h3>
+					{{ translated_entity.fields.field_page_title.0.value|length > 80
+						? translated_entity.fields.field_page_title.0.value|slice(0, 80) ~ '…'
+						: translated_entity.fields.field_page_title.0.value }}
+				</h3>
+			</div>
+			<div class="last-news-footer-container">
+				<div>
+					<a href="{{ path('entity.node.canonical', {'node': translated_entity.nid.value}) }}">
+						{{ 'Read the news' | t }}
+						<i class="icon-arrow-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				{% set country_term = translated_entity.fields.field_country.entity %}
+				<div>
+					<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

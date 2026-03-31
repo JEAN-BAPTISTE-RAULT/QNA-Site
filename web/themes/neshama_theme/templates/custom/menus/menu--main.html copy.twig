@@ -1,0 +1,109 @@
+{% import _self as menus %}
+{{ menus.menu_root(items, attributes) }}
+
+{% macro menu_root(items, attributes) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul{{ attributes.addClass('menu', 'menu--root') }} role="menubar">
+      {% for item in items %}
+        {% set is_fake = item.url is not empty and item.url.isRouted and (item.url.routeName in ['<nolink>', '<none>']) %}
+        {% set has_real_link = item.url is not empty and (not is_fake) %}
+        {% set has_children  = item.below is not empty %}
+
+        {% if has_real_link or is_fake or has_children %}
+          {%
+            set classes = [
+              'menu-item',
+              'menu-item--root',
+              'menu-item--level-0',
+              has_children ? 'menu-item--has-child menu-item--closed',
+              (not has_children and not has_real_link and not is_fake) ? 'menu-item--empty',
+              item.in_active_trail ? 'menu-item--active-trail',
+            ]
+          %}
+          <li{{ item.attributes.addClass(classes) }} role="none">
+            {% if has_real_link %}
+              {{ link(item.title, item.url, {'role': 'menuitem'}) }}
+            {% else %}
+              <span class="menu-item__label" role="menuitem"
+                    {% if has_children %}aria-haspopup="true" aria-expanded="false"{% endif %}>
+                {{ item.title }}
+              </span>
+            {% endif %}
+
+            {% if has_children %}
+              <div class="menu-item-container">
+                {{ menus.menu_children(item.below, 1) }}
+              </div>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro menu_children(items, level) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul class="menu menu--sub menu--level-{{ level }}" role="menu" aria-label="Sous-menu niveau {{ level }}">
+      {% for item in items %}
+        {% set is_fake = item.url is not empty and item.url.isRouted and (item.url.routeName in ['<nolink>', '<none>']) %}
+        {% set has_real_link = item.url is not empty and (not is_fake) %}
+        {% set has_children  = item.below is not empty %}
+        {% set has_small_children = item.below.below is not empty %}
+
+        {% if has_real_link or has_children %}
+          {%
+            set classes = [
+              'menu-item',
+              'menu-item--child',
+              'menu-item--level-' ~ level,
+              item.in_active_trail ? 'menu-item--active-trail',
+            ]
+          %}
+          <li{{ item.attributes.addClass(classes) }} role="none">
+            {% if has_real_link %}
+              {{ link(item.title, item.url, {'role': 'menuitem'}) }}
+            {% endif %}
+
+            {% if has_children %}
+              {% if level + 1 == 3 %}
+                {{ item.title }}
+                {{ menus.menu_children_level3(item.below, 3) }}
+              {% else %}
+                {{ menus.menu_children(item.below, level + 1) }}
+              {% endif %}
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro menu_children_level3(items, level) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul class="menu menu--sub menu--level-{{ level }} menu--third" role="menu" aria-label="Sous-menu niveau {{ level }}">
+      {% for item in items %}
+        {% set is_fake = item.url is not empty and item.url.isRouted and (item.url.routeName in ['<nolink>', '<none>']) %}
+        {% set has_real_link = item.url is not empty and (not is_fake) %}
+        {% set has_children  = item.below is not empty %}
+
+        {% if has_real_link or has_children %}
+
+          <li>
+            {% if has_real_link %}
+              {{ link(item.title, item.url, {'role': 'menuitem'}) }}
+            {% endif %}
+
+            {% if has_children %}
+              {{ menus.menu_children(item.below, level + 1) }}
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

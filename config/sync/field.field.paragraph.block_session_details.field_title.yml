@@ -1,0 +1,19 @@
+uuid: fa930ddb-82e4-45d7-9d36-e956639f0793
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.block_session_details
+id: paragraph.block_session_details.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: block_session_details
+label: 'Lecturer name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

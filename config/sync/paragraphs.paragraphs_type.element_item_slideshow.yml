@@ -1,0 +1,10 @@
+uuid: 0db8dae2-da14-4b74-a6dc-b17552ffa9f6
+langcode: en
+status: true
+dependencies: {  }
+id: element_item_slideshow
+label: 'Element : Item slideshow'
+icon_uuid: null
+icon_default: null
+description: 'Image + Caption'
+behavior_plugins: {  }

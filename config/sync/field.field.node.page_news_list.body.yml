@@ -1,0 +1,24 @@
+uuid: 6d5e60cf-3f65-4b3c-be9c-8a2f439f5827
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_news_list
+  module:
+    - text
+id: node.page_news_list.body
+field_name: body
+entity_type: node
+bundle: page_news_list
+label: 'Page description'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

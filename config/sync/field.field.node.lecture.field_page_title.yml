@@ -1,0 +1,19 @@
+uuid: e613708e-6322-4d22-8020-b958c22df2cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title
+    - node.type.lecture
+id: node.lecture.field_page_title
+field_name: field_page_title
+entity_type: node
+bundle: lecture
+label: 'Page title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

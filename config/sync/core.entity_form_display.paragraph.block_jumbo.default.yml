@@ -1,0 +1,76 @@
+uuid: b382bee5-fa53-4424-aef5-a7a4e3fa33ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_jumbo.field_description
+    - field.field.paragraph.block_jumbo.field_image
+    - field.field.paragraph.block_jumbo.field_link
+    - field.field.paragraph.block_jumbo.field_subtitle
+    - field.field.paragraph.block_jumbo.field_title
+    - image.style.neshama_jumbo_lg
+    - paragraphs.paragraphs_type.block_jumbo
+  module:
+    - image_widget_crop
+    - link
+    - text
+id: paragraph.block_jumbo.default
+targetEntityType: paragraph
+bundle: block_jumbo
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_widget_crop
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: neshama_jumbo_lg
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - neshama_1240_523
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_subtitle:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

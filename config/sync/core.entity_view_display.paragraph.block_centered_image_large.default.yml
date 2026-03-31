@@ -1,0 +1,35 @@
+uuid: 4c5653e4-0066-4114-a311-a52102de2cf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_centered_image_large.field_caption
+    - field.field.paragraph.block_centered_image_large.field_image
+    - paragraphs.paragraphs_type.block_centered_image_large
+  module:
+    - image
+id: paragraph.block_centered_image_large.default
+targetEntityType: paragraph
+bundle: block_centered_image_large
+mode: default
+content:
+  field_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: 3e7455a7-ba58-49f6-846f-90c503a812f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lecture
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.lecture
+target_entity_type_id: node
+target_bundle: lecture
+default_langcode: site_default
+language_alterable: true

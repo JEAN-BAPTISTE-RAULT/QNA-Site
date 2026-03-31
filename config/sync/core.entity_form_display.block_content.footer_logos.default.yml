@@ -1,0 +1,53 @@
+uuid: 42307261-b8df-489b-8dc9-be233ddf3cdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logos
+    - field.field.block_content.footer_logos.field_image
+    - field.field.block_content.footer_logos.field_logo
+    - image.style.thumbnail
+  module:
+    - image
+id: block_content.footer_logos.default
+targetEntityType: block_content
+bundle: footer_logos
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_logo:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

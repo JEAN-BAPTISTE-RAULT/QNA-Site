@@ -1,0 +1,22 @@
+uuid: 9aaa2588-4c31-404c-9dd3-b90ba8427ace
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.block_jumbo
+  module:
+    - text
+id: paragraph.block_jumbo.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: block_jumbo
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,24 @@
+uuid: 5087dc32-1171-4eab-a257-2793bdd0bfca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page_partners
+  module:
+    - text
+id: node.page_partners.body
+field_name: body
+entity_type: node
+bundle: page_partners
+label: 'Page description'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

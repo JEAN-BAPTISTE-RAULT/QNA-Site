@@ -1,0 +1,12 @@
+<?php
+
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Redirection après login.
+ */
+function custom_login_redirect_user_login(AccountInterface $account) {
+  // Change '/dashboard' par la page que tu veux.
+  return new RedirectResponse('/');
+}

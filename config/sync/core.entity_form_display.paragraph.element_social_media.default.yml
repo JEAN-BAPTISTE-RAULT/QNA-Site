@@ -1,0 +1,42 @@
+uuid: 9acd2449-b698-4082-be34-acf2c9a710b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_social_media.field_image
+    - field.field.paragraph.element_social_media.field_link
+    - image.style.neshama_image_100
+    - paragraphs.paragraphs_type.element_social_media
+  module:
+    - image
+    - link_target
+id: paragraph.element_social_media.default
+targetEntityType: paragraph
+bundle: element_social_media
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: neshama_image_100
+    third_party_settings: {  }
+  field_link:
+    type: link_target_field_widget
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      available_targets: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

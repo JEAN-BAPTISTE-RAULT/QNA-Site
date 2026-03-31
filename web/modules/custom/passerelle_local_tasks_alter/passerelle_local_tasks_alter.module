@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_menu_local_tasks_alter()
+ */
+function passerelle_local_tasks_alter_menu_local_tasks_alter(&$local_tasks) {
+  // Get the current user
+  $current_user = \Drupal::currentUser();
+
+  // Check if the user has the "administer site configuration" permission
+  if (!$current_user->hasPermission('administer site configuration')) {
+    // Remove all local tasks (tabs) for non-admin users
+    foreach ($local_tasks as &$task_group) {
+      foreach ($task_group as $key => $task) {
+        unset($task_group[$key]);
+      }
+    }
+  }
+
+  // Check if the node versions history link exists and remove it
+  if (isset($local_tasks['tabs'][0]['entity.node.version_history'])) {
+    unset($local_tasks['tabs'][0]['entity.node.version_history']);
+  }
+}

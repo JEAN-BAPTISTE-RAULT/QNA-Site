@@ -1,0 +1,7 @@
+neshama_set_edition.current_edition_form:
+  path: '/admin/content/set-edition'
+  defaults:
+    _form: '\Drupal\neshama_set_edition\Form\CurrentEditionForm'
+    _title: 'Set Current Edition'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,5 @@
+name: Custom Login Redirect
+type: module
+description: Force une redirection après login.
+core_version_requirement: ^11
+package: Custom

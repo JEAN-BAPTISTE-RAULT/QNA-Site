@@ -1,0 +1,8 @@
+uuid: 1fd9f9a1-9b87-4fc0-8079-733d74c3fa04
+langcode: en
+status: true
+dependencies: {  }
+id: footer_social_medias
+label: 'Footer social medias'
+revision: false
+description: 'Titre + Social medias links'

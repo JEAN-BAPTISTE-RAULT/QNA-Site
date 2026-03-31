@@ -1,0 +1,25 @@
+uuid: 4484519d-9244-46fa-83b2-ab210994a58d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - neshama_theme
+id: neshama_theme_menu_footer
+theme: neshama_theme
+region: footer_nav
+weight: -3
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

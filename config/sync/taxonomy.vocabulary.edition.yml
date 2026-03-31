@@ -1,0 +1,9 @@
+uuid: 40960536-4799-4327-a3f8-93beea767358
+langcode: en
+status: true
+dependencies: {  }
+name: Edition
+vid: edition
+description: null
+weight: 0
+new_revision: false

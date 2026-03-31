@@ -1,0 +1,18 @@
+uuid: 00e5c24b-8c05-45b0-9d33-75db99e2100f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page_contact
+id: node.page_contact.title
+field_name: title
+entity_type: node
+bundle: page_contact
+label: 'Admin title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
