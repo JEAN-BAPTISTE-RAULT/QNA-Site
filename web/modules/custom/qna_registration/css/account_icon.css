@@ -1,0 +1,32 @@
+.nr-account-icon {
+  position: relative;
+  display: inline-flex;
+}
+
+.nr-account-link,
+.nr-account-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nr-account-icon .nr-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.nr-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nr-dropdown-list a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+}

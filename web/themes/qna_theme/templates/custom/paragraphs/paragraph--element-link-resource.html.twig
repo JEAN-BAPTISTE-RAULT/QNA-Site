@@ -1,0 +1,37 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {% set link = paragraph.field_link %}
+    {% set link_title = link.title ?: link.uri %}
+    {% set link_url = link.uri %}
+    
+    <a href="{{ link_url }}" 
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="{{ link_title }} {{ 'external site, new window'|t }}">
+      <div class="d-flex gap-3 align-items-center">
+        <div class="element__documentary-photo">
+          <img src="/sites/default/files/icons/website.png" 
+               width="22" 
+               height="22" 
+               alt="{{'Website' | t}}" 
+               aria-hidden="true"/>
+        </div>
+        <div>
+          <div>{{ link_title }}</div>
+          <div>{{ link_url }}</div>
+        </div>
+      </div>
+      <span class="visually-hidden">{{ 'external site, new window'|t }}</span>
+    </a>
+  {% endblock %}
+</div>
+{% endblock paragraph %}

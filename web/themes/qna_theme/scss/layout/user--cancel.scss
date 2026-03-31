@@ -1,0 +1,38 @@
+@use "../mixins" as *;
+
+.user-cancel {
+    &__content-container {
+        flex: 1;
+        padding: 70px 105px;
+        padding-top: 32px;
+        background-color: var(--n-utility-2);
+    }
+
+    &__container {
+        margin: 0;
+    }
+
+    &__content {
+        
+    }
+
+    input[type='submit'] {
+        @include button-reset();
+    }
+
+    .layout-content {
+        min-height: calc(100vh - (265px + 105px) );
+    }
+
+    .region-content {
+        max-width: 490px;
+    }
+
+    #edit-actions {
+        margin-top: 2rem;
+    }
+
+    #edit-cancel {
+        color: #000;
+    }
+}

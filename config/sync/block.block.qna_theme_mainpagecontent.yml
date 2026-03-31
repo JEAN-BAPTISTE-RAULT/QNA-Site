@@ -1,0 +1,20 @@
+uuid: a7fd9198-36e4-45eb-b7e2-ed3aa6ef3663
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - qna_theme
+id: qna_theme_mainpagecontent
+theme: qna_theme
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

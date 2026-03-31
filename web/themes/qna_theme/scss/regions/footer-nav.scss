@@ -1,0 +1,171 @@
+@use '../breakpoints' as *;
+
+
+.block-footer {
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        color: white;
+        background-color: var(--n-utility-4);
+        padding: 58px 100px;
+        transition: all 0.3s;
+        justify-content: space-between;
+
+
+        @include breakpoint-down-xxl {
+            gap: 80px;
+        }
+
+        @include breakpoint-down-xl {
+            gap: 80px;
+        }
+
+        @include breakpoint-down-lg {
+            padding: 25px 16px;
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .block-logos-footer {
+            .field--name-field-image {
+                margin-bottom: 32px;
+                max-width: 206px;
+                width: 100%;
+                max-height: 56px;
+                height: 100%;
+
+                @include breakpoint-down-lg {
+                    margin-bottom: 20px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .field--name-field-logo {
+                max-width: 206px;
+                width: 100%;
+                max-height: 46px;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                @include breakpoint-down-lg {
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
+}
+
+.block-menu-footer {
+    &__container {
+        display: flex;
+        gap: 100px;
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s;
+
+        ul.menu {
+            margin: 0;
+
+            a.is-active {
+                color: white;
+            }
+        }
+
+        @include breakpoint-down-xl {
+            gap: 60px;
+        }
+
+        @include breakpoint-down-lg {
+            flex-direction: column;
+            gap: 0px;
+        }
+    }
+
+    &__item {
+        list-style: none;
+
+        span {
+            display: none;
+        }
+
+        ul {
+            @include breakpoint-down-lg {
+                padding-left: 0rem !important;
+            }
+
+            li {
+                margin-bottom: 20px;
+                width: max-content;
+
+                @include breakpoint-down-lg {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 25px;
+                    text-decoration: none;
+                    text-transform: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.block-socials-medias-footer {
+
+    .field--name-field-title {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+
+    .field--name-field-social-medias {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        .field--name-field-image {
+            display: flex;
+            max-width: 34px;
+            width: 100%;
+            max-height: 34px;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @include breakpoint-down-lg {
+        margin-top: 20px;
+    }
+}
+
+.motif-mobile {
+    display: none;
+
+    @include breakpoint-down-lg {
+        display: block;
+    }
+}

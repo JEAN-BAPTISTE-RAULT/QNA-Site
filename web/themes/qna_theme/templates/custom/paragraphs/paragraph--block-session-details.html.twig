@@ -1,0 +1,42 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section{{attributes.addClass(classes)}}>
+		{% block content %}
+			<div class="session-details__block d-flex gap-3">
+				<div class="session-details__left-content">
+					<div>
+						<h4>{{ 'Learning objectives' | t }}</h4>
+						<div>{{ paragraph.field_learning_objectives.value }}</div>
+					</div>
+					<div class="session-details__left-content__content">
+						<h4>{{ 'Content' | t }}</h4>
+						<div>{{ paragraph.field_lecture_content.value | raw }}</div>
+					</div>
+				</div>
+				<div class="session-details__right-content flex-0-0-25">
+					<h4>
+						<span>{{ 'Lecturer : ' | t }}</span>
+						<span>{{ paragraph.field_title.value }}</span>
+					</h4>
+					<div class="session-details__right-content__function">
+						<span>{{ 'Function of the speaker : ' | t }}</span>
+						<span>{{ paragraph.field_role.value }}</span>
+					</div>
+					<div class="session-details__right-content__img-container">
+						<img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_image_30') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}"/>
+					</div>
+					<div class="session-details__right-content__paragraph">
+						{{ paragraph.field_description.value | raw }}
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	</section>
+{% endblock paragraph %}

@@ -1,0 +1,23 @@
+uuid: 6b20256e-4c34-44ff-acfd-72fe785b3448
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_logos:8f761639-d16f-4e62-84da-f107f2245da8'
+  module:
+    - block_content
+  theme:
+    - qna_theme
+id: qna_theme_footerlogos
+theme: qna_theme
+region: footer_nav
+weight: -4
+provider: null
+plugin: 'block_content:8f761639-d16f-4e62-84da-f107f2245da8'
+settings:
+  id: 'block_content:8f761639-d16f-4e62-84da-f107f2245da8'
+  label: 'Footer logos'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

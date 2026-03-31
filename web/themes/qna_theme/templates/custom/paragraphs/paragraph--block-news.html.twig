@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+<div class="motif-mobile motif-mobile_secondary motif-mobile_size second_motif_secondary"></div>
+<section class="d-flex">
+	<div class="motif motif_secondary motif_border first_motif_secondary"></div>
+	{% block paragraph %}
+		<div{{attributes.addClass(classes)}}>
+			{% block content %}
+				<div>
+					<div class="news-text d-flex align-items-center gap-3 align-items-end">
+						<div>
+							<h3>{{ paragraph.field_title.value }}</h3>
+						</div>
+						{% if content.field_link is not empty %}
+							<div class="news-links">
+								{% for key, value in content.field_link %}
+									{% if key|first != '#' %}
+										{{ value }}
+										<i class="icon-arrow-right" aria-hidden="true"></i>
+									{% endif %}
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+					<div>{{ drupal_view('last_news') }}</div>
+				</div>
+			{% endblock %}
+		</div>
+	{% endblock paragraph %}
+	<div class="motif motif_primary motif_border first_motif_primary"></div>
+</section>
+<div class="motif-mobile motif-mobile_primary motif-mobile_size second_motif_secondary"></div>

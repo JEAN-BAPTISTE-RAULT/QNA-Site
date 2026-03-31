@@ -1,0 +1,48 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section class="block-ressource-list__container" {{ attributes.addClass(classes) }}>
+		{% block content %}
+			<div>
+				<div>
+					<h3>{{ paragraph.field_title.value }}</h3>
+				</div>
+
+				<div class="block-ressource-list__content-container">
+					{% if paragraph.field_resources_docs is not empty %}
+						<div class="block-ressource-list__size">
+							<h4>{{ 'Document(s)' | t }}</h4>
+							{% for item in paragraph.field_resources_docs %}
+								<div class="block-ressource-list__content">{{ item | view }}</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					{% if paragraph.field_resources_deepen is not empty %}
+						<div class="block-ressource-list__size">
+							<h4>{{ 'Learn more' | t }}</h4>
+							{% for item in paragraph.field_resources_deepen %}
+								<div class="block-ressource-list__content">{{ item | view }}</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					{% if paragraph.field_resources_videos is not empty %}
+						<div class="block-ressource-list__size">
+							<h4 class="vid-title">{{ 'Video(s)' | t }}</h4>
+							{% for item in paragraph.field_resources_videos %}
+								<div class="block-ressource-list__content">{{ item | view }}</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		{% endblock %}
+	</section>
+{% endblock paragraph %}

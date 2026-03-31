@@ -6,6 +6,7 @@ dependencies:
     - system.menu.footer
   module:
     - system
+    - user
   theme:
     - neshama_theme
 id: neshama_theme_menu_footer
@@ -22,4 +23,14 @@ settings:
   level: 1
   depth: null
   expand_all_items: false
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+      participant: participant

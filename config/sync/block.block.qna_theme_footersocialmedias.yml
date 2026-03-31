@@ -1,0 +1,23 @@
+uuid: 79a8fae1-16b2-4b3a-a926-452c6052f328
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_social_medias:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+  module:
+    - block_content
+  theme:
+    - qna_theme
+id: qna_theme_footersocialmedias
+theme: qna_theme
+region: footer_nav
+weight: -2
+provider: null
+plugin: 'block_content:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+settings:
+  id: 'block_content:5bbd1e25-90c9-47e3-a1c1-e3b759237478'
+  label: 'Footer social medias'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

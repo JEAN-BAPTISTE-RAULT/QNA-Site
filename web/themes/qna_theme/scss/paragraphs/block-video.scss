@@ -1,0 +1,47 @@
+@use '../breakpoints' as *;
+
+.block-video {
+    &__container {
+        .col-lg-4 {
+            padding: 131px 90px 202px;
+
+            @include breakpoint-down-lg {
+                padding: 33px 20px;
+            }
+
+            .icon-youtube {
+                font-size: 48px;
+            }
+        }
+    }
+
+    &__content-left {
+        h3 {
+            font-size: 24px;
+            margin: 13px 0px 13px;
+            font-weight: 700;
+        }
+    }
+
+    &__content-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        @include breakpoint-down-lg {
+            // max-height: 209px;
+            // height: 100%;
+
+            height: 209px;
+        }
+
+        i {
+            font-size: 54px;
+            background-color: var(--n-secondary);
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 100%;
+        }
+    }
+}

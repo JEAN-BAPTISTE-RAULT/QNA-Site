@@ -1,0 +1,27 @@
+{% set translated_entity = row._entity | translation %}
+
+<article class="views-row__block">
+	<a href="{{ path('entity.node.canonical', {'node': translated_entity.nid.value}) }}" class="views-row__block-item{% if translated_entity.fields.field_boolean.value %} views-row__block-item--highlight{% endif %}">
+		<div class="views-row__photo-container ratio ratio-16x9">
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" alt=""/>
+		</div>
+
+		<div class="views-row__text-container">
+			<div class="mb-3 d-flex gap-3 align-items-center justify-content-between views-row__block-date-flag">
+				<div>{{ translated_entity.changed.value|date('d/m/Y') }}</div>
+				{% set country_term = translated_entity.fields.field_country.entity %}
+				<div class="views-row__flag-container">
+					<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" alt="{{ country_term.name.value }}"/>
+				</div>
+			</div>
+
+			<h3>{{ translated_entity.fields.field_page_title.0.value }}</h3>
+
+			<div class="text-ellipsis">{{ translated_entity.fields.body.0.value | raw }}</div>
+
+			<div>
+				{{ 'Read the news' | t }}<i class="icon-arrow-right" aria-hidden="true"></i>
+			</div>
+		</div>
+	</a>
+</article>

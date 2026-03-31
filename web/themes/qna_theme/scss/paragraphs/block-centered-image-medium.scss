@@ -1,0 +1,47 @@
+@use '../breakpoints' as *;
+
+.paragraph--type--block-centered-image-medium {
+    &__container {
+        position: relative;
+        border-left: solid var(--n-primary) 100px;
+
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+
+        &__img-legend {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            padding: 16px 112px;
+
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px;
+            color: white;
+
+            @include breakpoint-down-lg {
+                padding: 20px 12px;
+            }
+        }
+
+        &__img-container {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 70vw;
+            margin: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@ class LoginRedirectController extends ControllerBase {
 
     // Si l'utilisateur est connecté → redirection custom
     if ($this->currentUser->isAuthenticated()) {
-      return new RedirectResponse('/');
+      //return new RedirectResponse('/');
     }
 
     // Sinon → comportement normal

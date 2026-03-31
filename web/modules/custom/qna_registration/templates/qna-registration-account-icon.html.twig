@@ -1,0 +1,24 @@
+<div class="nr-account-icon">
+  {% if not logged_in %}
+    <a href="{{ login_url }}" class="nr-account-link" aria-label="{{ 'Log in'|t }}">
+      <span class="nr-icon" aria-hidden="true">
+        <img src="{{ file_url('public://icons/account.svg') }}" width="24" height="26" alt="account" />
+      </span>
+    </a>
+  {% else %}
+    <button class="nr-account-button" aria-expanded="false" aria-haspopup="true" aria-label="{{ 'Open account menu'|t }}">
+      <span class="nr-icon" aria-hidden="true">
+        <img src="{{ file_url('public://icons/account.svg') }}" width="24" height="26" alt="account" />
+      </span>
+    </button>
+    <div class="nr-dropdown" hidden>
+      <ul class="nr-dropdown-list" role="menu">
+        {% for item in items %}
+          <li role="none">
+            <a role="menuitem" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>

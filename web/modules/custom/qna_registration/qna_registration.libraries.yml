@@ -1,0 +1,25 @@
+forgot_password:
+  js:
+    js/forgot_password.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+account_icon:
+  css:
+    theme:
+      css/account_icon.css: {}
+  js:
+    js/account_icon.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+login_eye:
+  js:
+    js/login-eye.js: {}
+
+login_layout:
+  css:
+    theme:
+      css/login-layout.css: {}

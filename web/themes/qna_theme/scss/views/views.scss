@@ -1,0 +1,140 @@
+@use '../breakpoints' as *;
+
+.block-news {
+    &__container {
+        .block-header {
+            &__content {
+                .motif {
+                    display: none !important;
+                }
+
+                width: 100%;
+                flex: 1;
+            }
+
+            &__space {
+                border: none !important;
+            }
+        }
+    }
+
+    &__session-date {
+        background-color: var(--n-secondary);
+        justify-content: space-between;
+
+        &--container {
+            padding: 19px 106px;
+            padding-right: 0;
+            width: 100%;
+            display: flex;
+            max-width: 1000px;
+            margin-right: calc(395px + 1rem);
+            justify-content: space-between;
+
+            .block-news__text {
+                font-size: 15px;
+
+                @include breakpoint-down-lg {
+                    font-size: 13px;
+                }
+            }
+
+            @include breakpoint-down-lg {
+                padding: 1rem;
+                width: 100%;
+                max-width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        &--desktop {
+            display: flex;
+
+            @include breakpoint-down-lg {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+            padding-bottom: 36px;
+
+            @include breakpoint-down-lg {
+                display: flex;
+            }
+        }
+
+        @include breakpoint-down-lg {
+            padding: 0;
+            background-color: transparent;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        font-style: normal;
+        line-height: 28px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__photo {
+        max-width: 24px;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__photo-container {
+        position: relative;
+        border-left: solid var(--n-primary) 100px;
+        border-right: solid white 100px;
+
+        width: 100%;
+        height: 690px;
+        object-fit: cover;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.08%, rgba(0, 0, 0, 0.8) 99.92%);
+            z-index: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        >div {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            padding: 16px 112px;
+
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px;
+            color: white;
+
+            @include breakpoint-down-lg {
+                padding: 20px 12px;
+            }
+        }
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+    }
+}

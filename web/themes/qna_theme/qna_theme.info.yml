@@ -1,0 +1,37 @@
+name: Qna
+type: theme
+description: ''
+version: 1.0.0
+core_version_requirement: ^11
+'base theme': stable9
+generator: 'starterkit_theme:11.2.2'
+
+libraries:
+  - qna_theme/base
+  - qna_theme/print
+  - qna_theme/messages
+  - qna_theme/bootstrap
+  - qna_theme/qna
+  - qna_theme/modal
+  - core/normalize
+
+libraries-extend:
+  user/drupal.user:
+    - qna_theme/user
+  core/drupal.dropbutton:
+    - qna_theme/dropbutton
+  core/drupal.dialog:
+    - qna_theme/dialog
+  file/drupal.file:
+    - qna_theme/file
+  core/drupal.progress:
+    - qna_theme/progress
+  core/drupal.tablesort:
+    - qna_theme/drupal.tablesort
+
+regions:
+  branding: 'Branding'
+  header_nav: 'Header nav'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  footer_nav: 'Footer nav'

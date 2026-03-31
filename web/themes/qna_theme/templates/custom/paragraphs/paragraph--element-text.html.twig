@@ -1,0 +1,37 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <section{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div>
+        {% if paragraph.field_title.value is not empty %}
+          <div>
+            <h3>{{ paragraph.field_title.value }}</h3>
+          </div>
+        {% endif %}
+        
+        {% if paragraph.field_description.value is not empty %}
+          <div>
+            <p>{{ paragraph.field_description.value | raw }}</p>
+          </div>
+        {% endif %}
+
+        {% if content.field_link is not empty %}
+          <div>
+            {% for key, value in content.field_link %}
+              {% if key|first != '#' %}
+                {{ value }}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endblock %}
+  </section>
+{% endblock paragraph %}

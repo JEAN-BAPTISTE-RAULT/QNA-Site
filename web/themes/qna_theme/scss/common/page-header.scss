@@ -1,0 +1,121 @@
+@use '../breakpoints' as *;
+
+.block-header {
+    &__content {
+        display: flex;
+    }
+
+    &__container {
+        border-left: solid var(--n-primary) 100px;
+
+        .motif {
+            @include breakpoint-down-lg {
+                display: none;
+            }
+        }
+
+        @include breakpoint-down-lg {
+            border: none;
+        }
+    }
+
+    &__space {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
+        flex: 1;
+        border-left: solid var(--n-primary) 100px;
+        --menuMobileHeight: 70px;
+
+        @include breakpoint-down-lg {
+            padding: 0;
+            display: initial;
+            border: none;
+        }
+    }
+
+    &__text {
+        max-width: 1000px;
+        width: 100%;
+        padding: 32px 0px 0px 106px;
+
+        @include breakpoint-down-lg {
+            width: 100%;
+            padding: 0;
+        }
+
+        div:nth-child(1) {
+            margin-bottom: 41px;
+        }
+
+        &__title {
+            margin-bottom: 15px;
+
+            @include breakpoint-down-lg {
+                padding: 0px 20px 0px;
+            }
+
+            h1 {
+                font-size: 30px;
+                font-weight: 700;
+                
+                @include breakpoint-down-lg {
+                    font-size: 20px;
+                    font-style: normal;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        &__description {
+            margin-bottom: 38px;
+            font-size: 15px;
+
+            @include breakpoint-down-lg {
+                padding: 0px 20px 30px;
+                margin: 0;
+            }
+        }
+    }
+
+    &__socials {
+        padding: 41px 106px 77px 61px;
+        background-color: var(--n-utility-2);
+
+        .share_title {
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 10px;
+            padding: 0;
+
+            li {
+                width: 36px;
+                height: 36px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                button {
+                    background: transparent;
+                    border: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        @include breakpoint-down-lg {
+            padding: 15px 20px;
+            background-color: var(--n-utility-2);
+        }
+    }
+}

@@ -35,7 +35,7 @@ class LoginRedirectSubscriber implements EventSubscriberInterface {
       if (in_array($route, ['user.page', 'entity.user.canonical'])) {
 
         // Redirection vers la page souhaitée.
-        $event->setResponse(new RedirectResponse('/'));
+       // $event->setResponse(new RedirectResponse('/'));
       }
     }
   }

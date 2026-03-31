@@ -1,0 +1,36 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section class="block-video__container" {{ attributes.addClass(classes) }}>
+		{% block content %}
+			{% set uniqId = random() ~ date().timestamp %}
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-lg-4 bg__secondary">
+						<div class="block-video__content-left">
+							<i class="icon-youtube" aria-hidden="true"></i>
+							<h3>{{ paragraph.field_title.value }}</h3>
+							{% if paragraph.field_caption.value %}
+								<div>{{ paragraph.field_caption.value }}</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-12 col-lg-8 bg__image--cover block-video__content-right" style="background-image:url('{{ paragraph.field_image.entity.fileuri | image_style('neshama_video_preview') }}')">
+						<i class="icon-play" id={{'v-btn-'~uniqId}}></i>
+					</div>
+
+					<template class="tempalte-modal-video-content" modal-id="{{uniqId}}" button-selector="#v-btn-" modal-selector="#v-modal-">
+						{{paragraph.field_video_link | view}}
+					</template>
+				</div>
+			</div>
+		{% endblock %}
+	</section>
+	<div class="motif-mobile motif-mobile_primary motif-mobile_size"></div>
+{% endblock paragraph %}

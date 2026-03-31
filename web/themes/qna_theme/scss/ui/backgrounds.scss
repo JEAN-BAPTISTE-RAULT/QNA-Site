@@ -1,0 +1,64 @@
+.motif {
+    background-repeat: repeat, repeat;
+    background-position: 0 60px, 38px 66px;
+
+    &_primary {
+        background-image:
+            url('../images/n_blue_up.png'),
+            url('../images/n_blue_down.png');
+    }
+
+    &_secondary {
+        background-color: var(--n-secondary);
+    }
+    
+    &_color-primary {
+        background-color: var(--n-primary);
+    }
+
+    &_border {
+        width: 100px;
+        z-index: 999;
+    }
+}
+
+.motif-mobile {
+    background-repeat: repeat, repeat;
+
+    background-position: 0 215px, 33px 51px;
+
+    &_primary {
+        background-image:
+            url('../images/n_blue_up.png'),
+            url('../images/n_blue_down.png');
+    }
+
+    &_secondary {
+        background-color: var(--n-secondary);
+    }
+
+    &_size {
+        width: 100%;
+        height: 75px;
+    }
+}
+
+.bg {
+    &__image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &--cover {
+            background-size: cover;
+        }
+    }
+
+    &__primary {
+        background-color: var(--n-primary);
+    }
+
+    &__secondary {
+        background-color: var(--n-secondary);
+    }
+}

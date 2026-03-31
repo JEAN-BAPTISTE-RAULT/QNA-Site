@@ -1,0 +1,64 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section{{attributes.addClass(classes)}}>
+		{% block content %}
+			<div class="block-stakeholders__container">
+				<div class="d-flex justify-content-between align-items-center block-stakeholders__title">
+					<div>
+						<h2>{{ paragraph.field_title.value }}</h2>
+					</div>
+					{% if content.field_link is not empty %}
+						<div class="block-stakeholders__partners-link pc-partners-links">
+							{% for key, value in content.field_link %}
+								{% if key|first != '#' %}
+									{{ value }}
+									<i class="icon-arrow-right" aria-hidden="true"></i>
+								{% endif %}
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+				<div class="block-stakeholders__items">
+
+					<div>
+						<button name="navigation" class="swiper-btn-prev" aria-label="{{'Previous slide' |t}}">
+							<i class="icon-chevron-right" aria-hidden="true"></i>
+						</button>
+						<button name="navigation" class="swiper-btn-next" aria-label="{{'Next slide' |t}}">
+							<i class="icon-chevron-right" aria-hidden="true"></i>
+						</button>
+					</div>
+
+					<div class="swiper" slide-views="3.2" space-between="23" navigation=".swiper-btn">
+						<div class="swiper-wrapper">
+							{% for item in paragraph.field_partners %}
+								<div class="swiper-slide">
+									{{ item | view }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{% if content.field_link is not empty %}
+				<div class="block-stakeholders__partners-link mobile-partners-links">
+					{% for key, value in content.field_link %}
+						{% if key|first != '#' %}
+							{{ value }}
+							<i class="icon-arrow-right" aria-hidden="true"></i>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endblock %}
+	</section>
+{% endblock paragraph %}
+{{ attach_library('qna_theme/swiper') }}

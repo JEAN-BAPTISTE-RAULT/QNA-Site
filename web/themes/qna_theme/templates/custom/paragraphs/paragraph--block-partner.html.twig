@@ -1,0 +1,52 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<section class="block-partner__item">
+		{% block content %}
+			<div class="block-partner__item-photo">
+				<img src="{{ paragraph.field_image.entity.fileuri | image_style('qna_partner') }}" width="16" height="9" alt="{{ paragraph.field_image.alt|default('') }}"/>
+			</div>
+
+			{% set country_term = paragraph.field_country.entity %}
+			<div class="block-partner__item-flag">
+				<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+			</div>
+
+			<div>
+				<h3>{{ paragraph.field_title.value }}</h3>
+			</div>
+
+			<div class="block-partner__item-text">
+				<p>{{ paragraph.field_description.value | raw }}</p>
+			</div>
+
+        <div class="d-flex align-items-center gap-3">
+          {% if paragraph.field_link is not empty %}
+            <div>
+              <a href="{{ paragraph.field_link.uri }}" target="_blank" rel="noopener noreferrer">
+                {{ paragraph.field_link.title ?: paragraph.field_link.uri }}
+                <i class="icon-site-internet" aria-hidden="true"></i>
+              </a>
+            </div>
+          {% endif %}
+          {% if paragraph.field_file is not empty %}
+            <div class="partner-download">
+              <a href="{{ file_url(paragraph.field_file.entity.fileuri) }}" download>
+                {{ 'Download' | t }}
+                <i class="icon-download" aria-hidden="true"></i>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+    {% endblock %}
+  </section>
+
+{% endblock paragraph %}
+
+{{ attach_library('qna_theme/swiper') }}

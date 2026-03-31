@@ -1,0 +1,33 @@
+@use "../breakpoints" as *;
+
+.view-participants {
+    &__column {
+        flex: 1;
+    }
+}
+
+.view-content-participants {
+    --gap-x: 10px;
+    flex: 1;
+    padding-top: 50px;
+    padding-left: 105px;
+    padding-bottom: 85px;
+    max-width: 945px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--gap-x);
+    justify-content: space-between;
+    row-gap: 48px;
+
+    @include breakpoint-down-lg {
+        padding: 30px 20px;
+    }
+
+    .views-row {
+        width: calc(50% - var(--gap-x));
+
+        @include breakpoint-down-lg {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@use "../mixins" as *;
+
+.user-page {
+    &__content-container {
+        flex: 1;
+        padding: 70px 105px;
+        padding-top: 32px;
+        background-color: var(--n-utility-2);
+    }
+
+    &__container {
+        margin: 0;
+    }
+
+    &__content {
+        margin: auto;
+    }
+
+    input[type='submit'] {
+        @include button-reset();
+    }
+
+    .layout-content {
+        min-height: calc(100vh - (265px + 105px) );
+    }
+}

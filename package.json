@@ -1,0 +1,29 @@
+{
+  "name": "qna-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch web/themes/qna_theme/scss/style.scss:web/themes/qna_theme/css/style.css --source-map",
+    "serve": "browser-sync start --config bs-config.js",
+    "start": "concurrently \"npm run sass\" \"npm run serve\"",
+    "cr": "php vendor/drush/drush/drush.php cr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEAN-BAPTISTE-RAULT/QNA-Site.git"
+  },
+  "keywords": [],
+  "author": "PASSERELLE",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JEAN-BAPTISTE-RAULT/QNA-Site/issues"
+  },
+  "homepage": "https://github.com/JEAN-BAPTISTE-RAULT/QNA-Site#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "sass": "^1.91.0"
+  }
+}

@@ -1,0 +1,23 @@
+@use '../breakpoints' as *;
+
+input {
+    &[type='file'] {
+        padding: 0 !important;
+        background-color: white;
+        border: 1px solid var(--n-utility-5);
+        width: calc(50% - .5rem);
+        cursor: pointer;
+
+        @include breakpoint-down-lg {
+            width: 100%;
+        }
+
+        &::file-selector-button {
+            color: white;
+            background-color: var(--n-primary);
+            border: 0;
+            padding: 12px 20px;
+            margin-right: 1rem;
+        }
+    }
+}

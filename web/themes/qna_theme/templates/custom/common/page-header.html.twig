@@ -1,0 +1,57 @@
+<div class="block-header__content">
+	<div class="block-header__space">
+		<div class="block-header__text">
+			<div>{{ drupal_region('breadcrumb') }}</div>
+			{% if title %}
+				<div class="block-header__text__title">
+					<h1>{{ title }}</h1>
+				</div>
+			{% endif %}
+			{% if description and description|default('')|trim != '' %}
+				<div class="block-header__text__description">
+					{{ description | raw }}
+				</div>
+			{% endif %}
+		</div>
+		{% if share %}
+			{% if flag is defined and flag  %}
+				<div class="align-items-center gap-3 block-news__session-date block-news__session-date--mobile">
+					<div class="block-news__session-date--container">
+						<div class="block-news__text">{{ flag.date }}</div>
+						<div class="block-news__photo">
+							<img src="{{ file_url(flag.uri) }}"
+								width="{{ flag.width }}"
+								height="{{ flag.height }}"
+								alt="{{ flag.alt }}"/>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+			<div class="block-header__socials">
+				<h2 class="share_title">{{ 'Share' | t }}</h2>
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}&amp;src=sdkpreparse" target="_blank" rel="noopener noreferrer" aria-label="{{ 'Share on Facebook (new window)'|t }}">
+							<img src="/sites/default/files/social-medias/facebook.png" width="72" height="72" alt="facebook" aria-hidden="true"/>
+							<span class="visually-hidden">{{ '(new window)'|t }}</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.linkedin.com/shareArticle?url={{ url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'Share on LinkedIn (new window)'|t }}">
+							<img src="/sites/default/files/social-medias/linkedin.png" width="72" height="72" alt="linkedin" aria-hidden="true"/>
+							<span class="visually-hidden">{{ '(new window)'|t }}</span>
+						</a>
+					</li>
+
+					<li>
+						<button type="button" class="print-button" onclick="window.print();" aria-label="{{ 'Print this page'|t }}">
+							<img src="/sites/default/files/social-medias/print.png" width="72" height="72" alt="print" aria-hidden="true"/>
+						</button>
+					</li>
+				</ul>
+			</div>
+		{% endif %}
+	</div>
+	<div class="motif motif_primary motif_border"></div>
+</div>

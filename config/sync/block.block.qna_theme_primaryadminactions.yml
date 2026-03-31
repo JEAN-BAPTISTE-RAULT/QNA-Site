@@ -1,0 +1,18 @@
+uuid: 8d95b2b2-2ad5-4502-8bf6-149b84b7c9e4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - qna_theme
+id: qna_theme_primaryadminactions
+theme: qna_theme
+region: content
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

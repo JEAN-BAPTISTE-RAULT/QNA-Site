@@ -1,0 +1,20 @@
+uuid: f3b55553-309f-4868-82e7-a147877599cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - qna_theme
+id: qna_theme_messages
+theme: qna_theme
+region: content
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

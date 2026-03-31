@@ -1,0 +1,210 @@
+@use "../breakpoints" as *;
+
+.last-news-view-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint-down-lg {
+        display: inline;
+    }
+}
+
+.last-news-view-content div {
+    width: 100%;
+
+    h3 {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        transition: all 0.3s;
+
+        @include breakpoint-down-xl {
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+        }
+
+        @include breakpoint-down-lg {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px;
+        }
+    }
+}
+
+.last-news-img-container {
+    overflow: hidden;
+}
+
+.last-news-img-container .last-news-photo {
+    width: 100%;
+    height: auto;
+    transition: transform .5s ease;
+}
+
+.last-news-container:hover .last-news-photo {
+    transform: scale(1.05);
+
+    @include breakpoint-down-lg {
+        transform: scale(1);
+    }
+}
+
+.last-news-img-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50.08%, rgba(0, 0, 0, 0.80) 99.92%);
+    z-index: 1;
+
+    @include breakpoint-down-lg {
+        display: none;
+    }
+}
+
+.last-news-view-content div:nth-child(2),
+.last-news-view-content div:nth-child(3) {
+    width: 49.5%;
+    margin-top: 1%;
+
+    h3 {
+        font-size: 18px;
+        line-height: 28px;
+
+        @include breakpoint-down-lg {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 25px;
+        }
+    }
+
+    @include breakpoint-down-lg {
+        width: 100%;
+        margin: 0px;
+    }
+}
+
+.last-news-view-content div:nth-child(2) {
+    margin-right: 1%;
+}
+
+.last-news-container {
+    position: relative;
+
+    @include breakpoint-down-lg {
+        position: initial;
+    }
+}
+
+.last-news-text-container {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    padding: 15px 20px;
+    color: white;
+    width: 100% !important;
+
+    h3 {
+        font-style: normal;
+        font-weight: 700;
+
+        @include breakpoint-down-lg {
+            padding: 10px 0px 15px;
+            margin: 0 !important;
+        }
+    }
+
+    @include breakpoint-down-lg {
+        position: initial;
+        color: black;
+        padding: 20px 0px 30px;
+    }
+}
+
+.last-news-date {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.last-news-footer-container {
+    display: flex;
+    align-items: center;
+    width: 100% !important;
+    justify-content: space-between;
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: none;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+        font-style: normal;
+        display: flex;
+        align-items: center;
+
+        @include breakpoint-down-lg {
+            color: black;
+        }
+    }
+
+    div:nth-child(2) {
+        max-width: 24px;
+        width: 100%;
+        text-align: right;
+
+        @include breakpoint-down-lg {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    i {
+        margin-left: 10px;
+        transition: all 0.3s;
+    }
+
+    a:hover {
+        i {
+            margin-left: 20px;
+        }
+    }
+}
+
+.mobile_grid {
+    display: flex;
+    justify-content: space-between;
+
+    .pc_flag_container {
+        @include breakpoint-down-lg {
+            display: none;
+        }
+    }
+
+    .mobile_flag_container {
+        @include breakpoint-down-lg {
+            display: inline !important;
+            max-width: 24px !important;
+            width: 100%;
+            text-align: right;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

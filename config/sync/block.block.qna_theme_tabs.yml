@@ -1,0 +1,20 @@
+uuid: bd0da30e-e05b-4e95-be30-2e5830015e32
+langcode: en
+status: true
+dependencies:
+  theme:
+    - qna_theme
+id: qna_theme_tabs
+theme: qna_theme
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

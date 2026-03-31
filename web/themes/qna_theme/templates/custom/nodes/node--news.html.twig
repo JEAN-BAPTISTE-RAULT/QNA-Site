@@ -1,0 +1,79 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('qna_theme/node') }}
+<article{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label and not page %}
+		<h2{{title_attributes}}>
+			<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+		</h2>
+	{% endif %}
+	{{ title_suffix }}
+
+	{% if display_submitted %}
+		<footer class="node__meta">
+			{{ author_picture }}
+			<div{{author_attributes.addClass('node__submitted')}}>
+				{% trans %}Submitted by
+				{{ author_name }}
+				on
+				{{ date }}{% endtrans %}
+				{{ metadata }}
+			</div>
+		</footer>
+	{% endif %}
+
+	<div class="block-news__container" {{content_attributes.addClass('node__content')}}>
+		{% set country_term = node.field_country.entity %}
+		<div class="block-header__container">
+			<div class="d-flex justify-content-between">
+				{% include 'themes/qna_theme/templates/custom/common/page-header.html.twig' with {
+					title: node.field_page_title.value,
+					description: node.body.value,
+					share: node.field_share_on_social_medias.value,
+					url: url('entity.node.canonical', {'node': node.id() }, {'absolute': true}),
+					flag: {
+						uri: file_url(country_term.field_flag.entity.fileuri),
+						width: country_term.field_flag.0.width,
+						height: country_term.field_flag.0.height,
+						alt: country_term.name.value,
+						date: node.changed.value|date('m/d/Y')
+					}
+				} %}
+				<div class="motif motif_primary motif_border"></div>
+			</div>
+			<div class="align-items-center gap-3 block-news__session-date block-news__session-date--desktop">
+				<div class="block-news__session-date--container">
+					<div class="block-news__text">{{ node.changed.value|date('m/d/Y') }}</div>
+					<div class="block-news__photo">
+						<img src="{{ file_url(country_term.field_flag.entity.fileuri) }}" width="{{ country_term.field_flag.0.width }}" height="{{ country_term.field_flag.0.height }}" alt="{{ country_term.name.value }}"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="block-news__photo-container">
+			<img src="{{ node.field_image.entity.fileuri | image_style('qna_news') }}" width="{{ node.field_image.0.width }}" height="{{ node.field_image.0.height }}" alt="{{ node.field_image.alt|default('') }}"/>
+
+			{% if node.field_caption.value is not empty %}
+				<div>{{ node.field_caption.value | raw }}</div>
+			{% endif %}
+		</div>
+
+		<div>
+			{% for item in node.field_paragraphs %}
+				<div {% if not loop.first %} {% endif %}>
+					{{ item | view }}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</article>

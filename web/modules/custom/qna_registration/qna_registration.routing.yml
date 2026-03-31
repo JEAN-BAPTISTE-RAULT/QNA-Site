@@ -1,0 +1,20 @@
+qna_registration.participant_moderation:
+  path: '/node/{node}/moderation'
+  defaults:
+    _title: 'Moderation'
+    _form: '\Drupal\qna_registration\Form\ParticipantModerationForm'
+  requirements:
+    _permission: 'moderate participant registrations'
+    _entity_access: 'node.view'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+qna_registration.my_personal_data:
+  path: '/user/my-personal-data'
+  defaults:
+    _controller: '\Drupal\qna_registration\Controller\MyPersonalDataController::page'
+    _title: 'My personal data'
+  requirements:
+    _role: 'authenticated'

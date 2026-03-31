@@ -1,0 +1,20 @@
+uuid: 518d5338-3bde-4b2f-9d58-2ddc1dab4876
+langcode: en
+status: true
+dependencies:
+  module:
+    - qna_registration
+  theme:
+    - qna_theme
+id: qna_theme_accounticonloginuseractions
+theme: qna_theme
+region: header_nav
+weight: -3
+provider: null
+plugin: qna_registration_account_icon
+settings:
+  id: qna_registration_account_icon
+  label: 'Account icon (login / user actions)'
+  label_display: '0'
+  provider: qna_registration
+visibility: {  }

@@ -1,0 +1,175 @@
+base:
+  version: VERSION
+  dependencies:
+    - core/drupal
+  css:
+    component:
+      css/components/action-links.css:
+        weight: -10
+      css/components/breadcrumb.css:
+        weight: -10
+      css/components/button.css:
+        weight: -10
+      css/components/container-inline.css:
+        weight: -10
+      css/components/details.css:
+        weight: -10
+      css/components/exposed-filters.css:
+        weight: -10
+      css/components/field.css:
+        weight: -10
+      css/components/form.css:
+        weight: -10
+      css/components/icons.css:
+        weight: -10
+      css/components/inline-form.css:
+        weight: -10
+      css/components/item-list.css:
+        weight: -10
+      css/components/link.css:
+        weight: -10
+      css/components/links.css:
+        weight: -10
+      css/components/menu.css:
+        weight: -10
+      css/components/more-link.css:
+        weight: -10
+      css/components/pager.css:
+        weight: -10
+      css/components/tabledrag.css:
+        weight: -10
+      css/components/tableselect.css:
+        weight: -10
+      css/components/tabs.css:
+        weight: -10
+      css/components/textarea.css:
+        weight: -10
+      css/components/ui-dialog.css:
+        weight: -10
+
+qna:
+  css:
+    theme:
+      icons/style.css: {}
+      css/style.css: {}
+  js:
+    js/menu.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+print:
+  css:
+    theme:
+      css/print.css: { media: print }
+
+swiper:
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css: { type: external }
+  js:
+    https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js: { type: external }
+    js/swiper.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+menu:
+  js:
+    js/menu.js: { }
+
+modal:
+  js:
+    js/modal.js: { }
+
+aos:
+  version: VERSION
+  css:
+    component:
+      https://unpkg.com/aos@2.3.1/dist/aos.css: {type: external}
+  header: false
+  js:
+    https://unpkg.com/aos@2.3.1/dist/aos.js : {type: external}
+    js/custom-aos.js: { }
+
+dialog:
+  version: VERSION
+  css:
+    component:
+      css/components/dialog.css:
+        weight: -10
+
+dropbutton:
+  version: VERSION
+  css:
+    component:
+      css/components/dropbutton.css:
+        weight: -10
+
+file:
+  version: VERSION
+  css:
+    component:
+      css/components/file.css:
+        weight: -10
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/components/image-widget.css: {  }
+
+indented:
+  version: VERSION
+  css:
+    component:
+      css/components/indented.css: {  }
+
+messages:
+  version: VERSION
+  css:
+    component:
+      css/components/messages.css:
+        weight: -10
+
+node:
+  version: VERSION
+  css:
+    component:
+      css/components/node.css:
+        weight: -10
+
+progress:
+  version: VERSION
+  css:
+    component:
+      css/components/progress.css:
+        weight: -10
+
+drupal.tablesort:
+  version: VERSION
+  css:
+    component:
+      css/components/tablesort.css:
+        weight: -10
+
+search-results:
+  version: VERSION
+  css:
+    component:
+      css/components/search-results.css: {  }
+
+user:
+  version: VERSION
+  css:
+    component:
+      css/components/user.css:
+        weight: -10
+
+bootstrap:
+  version: VERSION
+  css:
+    theme:
+      //cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css: {}
+  js:
+    //cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js: {}

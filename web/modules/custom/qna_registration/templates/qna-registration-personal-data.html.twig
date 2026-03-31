@@ -1,0 +1,33 @@
+{{ attach_library('qna/node') }}
+
+<article class="node node--view-mode-page node--type-page-registration personal-data__container">
+	<div class="node__content">
+		<div class="page-registration__space">
+			<div class="page-registration__header">
+				{% if title %}
+					<h1>{{ title }}</h1>
+				{% endif %}
+
+				{% if body %}
+					<div class="page-registration__intro">
+						{{ body|raw }}
+					</div>
+				{% endif %}
+
+			</div>
+			<div class="motif motif_primary motif_border"></div>
+		</div>
+
+		<div
+			class="page-registration__form">
+			<div class="motif motif_primary motif_border"></div>
+			{% if webform is defined and webform %}
+				{{ webform }}
+			{% else %}
+				<div class="messages messages--warning">
+					{{ 'The form is not available at the moment.'|t }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</article>

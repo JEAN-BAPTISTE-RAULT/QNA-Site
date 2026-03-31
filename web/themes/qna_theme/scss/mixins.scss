@@ -1,0 +1,37 @@
+@use "sass:list";
+@mixin transition($properties...) {
+  $prop: if(list.length($properties) == 0, all, $properties);
+
+  $transitions: ();
+  @each $p in $prop {
+    $transitions: list.append($transitions, #{$p ease-in .25s}, comma);
+  }
+
+  transition: $transitions;
+}
+
+@mixin input-reset() {
+  border: 1px solid var(--n-utility-5);
+  padding: 12px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 0;
+}
+
+@mixin button-reset() {
+  padding: 5px 25px;
+  background-color: var(--n-primary);
+  border-radius: 90px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  line-height: 40px;
+
+  &:hover {
+    background-color: var(--n-secondary);
+  }
+
+  @include transition();
+}

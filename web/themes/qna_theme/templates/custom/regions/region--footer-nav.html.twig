@@ -1,0 +1,13 @@
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+{% if content %}
+	<div{{attributes.addClass(classes)}}>
+		<div class="block-footer__container">
+			{{ content }}
+		</div>
+	</div>
+{% endif %}

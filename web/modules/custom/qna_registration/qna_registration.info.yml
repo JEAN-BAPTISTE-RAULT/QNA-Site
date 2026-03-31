@@ -1,0 +1,9 @@
+name: Registration
+type: module
+description: Creates a participant node from the registration webform submission
+core_version_requirement: ^11
+package: Qna
+dependencies:
+  - drupal:webform
+  - drupal:node
+  - drupal:file
