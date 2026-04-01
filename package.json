@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch web/themes/qna_theme/scss/style.scss:web/themes/qna_theme/css/style.css --source-map",
+    "sass": "sass --watch web/themes/neshama_theme/scss/style.scss:web/themes/neshama_theme/css/style.css --source-map",
     "serve": "browser-sync start --config bs-config.js",
     "start": "concurrently \"npm run sass\" \"npm run serve\"",
     "cr": "php vendor/drush/drush/drush.php cr"

@@ -3,9 +3,7 @@
     background-position: 0 60px, 38px 66px;
 
     &_primary {
-        background-image:
-            url('../images/n_blue_up.png'),
-            url('../images/n_blue_down.png');
+        background-color: var(--n-utility-6);
     }
 
     &_secondary {
@@ -28,9 +26,7 @@
     background-position: 0 215px, 33px 51px;
 
     &_primary {
-        background-image:
-            url('../images/n_blue_up.png'),
-            url('../images/n_blue_down.png');
+        background-color: var(--n-utility-6);
     }
 
     &_secondary {

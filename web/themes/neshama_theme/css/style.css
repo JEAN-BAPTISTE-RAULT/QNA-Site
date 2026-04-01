@@ -1,12 +1,14 @@
 :root {
-  --n-primary: #00127A;
-  --n-secondary: #FFBB2E;
+  --n-primary: #15418C;
+  --n-secondary: #E92762;
   --n-danger: #FF0000;
   --n-utility-1: #F2ECE4;
   --n-utility-2: #D9DBEB;
   --n-utility-3: #D9DBEB4D;
   --n-utility-4: #5C5C5C;
   --n-utility-5: #BDBDBD;
+  --n-utility-6: #f1f2f2;
+  --n-utility-7: #FF645C;
 }
 
 .motif {
@@ -14,7 +16,7 @@
   background-position: 0 60px, 38px 66px;
 }
 .motif_primary {
-  background-image: url("../images/n_blue_up.png"), url("../images/n_blue_down.png");
+  background-color: var(--n-utility-6);
 }
 .motif_secondary {
   background-color: var(--n-secondary);
@@ -32,7 +34,7 @@
   background-position: 0 215px, 33px 51px;
 }
 .motif-mobile_primary {
-  background-image: url("../images/n_blue_up.png"), url("../images/n_blue_down.png");
+  background-color: var(--n-utility-6);
 }
 .motif-mobile_secondary {
   background-color: var(--n-secondary);
@@ -560,10 +562,12 @@ form #edit-legals {
   cursor: pointer;
   color: white;
   line-height: 40px;
-  transition: all ease-in 0.25s;
 }
 .user-page input[type=submit]:hover {
   background-color: var(--n-secondary);
+}
+.user-page input[type=submit] {
+  transition: all ease-in 0.25s;
 }
 .user-page .layout-content {
   min-height: calc(100vh - 370px);
@@ -637,10 +641,12 @@ form #edit-legals {
   cursor: pointer;
   color: white;
   line-height: 40px;
-  transition: all ease-in 0.25s;
 }
 .user-edit input[type=submit]:hover {
   background-color: var(--n-secondary);
+}
+.user-edit input[type=submit] {
+  transition: all ease-in 0.25s;
 }
 .user-edit select {
   border: 1px solid var(--n-utility-5);
@@ -687,10 +693,12 @@ form #edit-legals {
   cursor: pointer;
   color: white;
   line-height: 40px;
-  transition: all ease-in 0.25s;
 }
 .user-cancel input[type=submit]:hover {
   background-color: var(--n-secondary);
+}
+.user-cancel input[type=submit] {
+  transition: all ease-in 0.25s;
 }
 .user-cancel .layout-content {
   min-height: calc(100vh - 370px);
@@ -797,12 +805,12 @@ header[role=banner] .button-menu-mobile {
   width: 100%;
   padding: 19px 106px;
 }
-.session-date__text span:nth-child(1) {
-  font-weight: 700;
-}
 .session-date__text span:nth-child(1) i {
   margin-right: 2px;
   font-size: 20px;
+}
+.session-date__text span:nth-child(1) {
+  font-weight: 700;
 }
 @media (max-width: 992px) {
   .session-date__text {
@@ -1167,7 +1175,7 @@ header[role=banner] .button-menu-mobile {
 .paragraph--type--block-centered-image-large__container {
   position: relative;
   border-left: solid var(--n-primary) 100px;
-  border-right: solid white 100px;
+  border-right: solid var(--n-utility-6) 100px;
 }
 @media (max-width: 992px) {
   .paragraph--type--block-centered-image-large__container {
@@ -1853,12 +1861,12 @@ header[role=banner] .button-menu-mobile {
   font-weight: 400;
   line-height: 25px;
 }
-.session-details__right-content__img-container {
-  padding-bottom: 22px;
-}
 .session-details__right-content__img-container img {
   width: 100%;
   height: auto;
+}
+.session-details__right-content__img-container {
+  padding-bottom: 22px;
 }
 
 .paragraph--type--block-slideshow-stakeholders {
@@ -2130,6 +2138,18 @@ header[role=banner] .button-menu-mobile {
   border-radius: 100%;
 }
 
+.collections-item {
+  color: white;
+}
+.collections-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collections-text {
+  color: currentColor;
+  background-color: var(--n-utility-7);
+}
 .region-branding {
   margin-left: 48px;
 }
@@ -2382,10 +2402,12 @@ header[role=banner] .button-menu-mobile {
   padding: 0;
   color: #000;
   text-transform: initial;
-  text-decoration: none;
 }
 .region-header-nav .link-sub:hover {
   background-color: transparent;
+}
+.region-header-nav .link-sub {
+  text-decoration: none;
 }
 .region-header-nav .link-sub span {
   display: inline-block;
@@ -2507,10 +2529,12 @@ header[role=banner] .button-menu-mobile {
   padding: 0;
   color: #000;
   text-transform: initial;
-  cursor: pointer;
 }
 .region-header-nav .menu-sub-column .link-title:hover {
   background-color: transparent;
+}
+.region-header-nav .menu-sub-column .link-title {
+  cursor: pointer;
 }
 .region-header-nav .menu-sub-column .link-title.link-sub--active span, .region-header-nav .menu-sub-column .link-title.link-sub:hover span {
   color: #fff;
@@ -2778,12 +2802,12 @@ header[role=banner] .button-menu-mobile {
   display: block;
 }
 
+.block-news__container .block-header__content .motif {
+  display: none !important;
+}
 .block-news__container .block-header__content {
   width: 100%;
   flex: 1;
-}
-.block-news__container .block-header__content .motif {
-  display: none !important;
 }
 .block-news__container .block-header__space {
   border: none !important;
@@ -2859,7 +2883,7 @@ header[role=banner] .button-menu-mobile {
 .block-news__photo-container {
   position: relative;
   border-left: solid var(--n-primary) 100px;
-  border-right: solid white 100px;
+  border-right: solid var(--n-utility-6) 100px;
   width: 100%;
   height: 690px;
   object-fit: cover;
