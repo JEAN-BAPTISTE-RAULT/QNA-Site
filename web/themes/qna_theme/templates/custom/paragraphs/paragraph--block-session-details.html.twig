@@ -30,7 +30,7 @@
 						<span>{{ paragraph.field_role.value }}</span>
 					</div>
 					<div class="session-details__right-content__img-container">
-						<img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_image_30') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}"/>
+						<img src="{{ paragraph.field_image.entity.fileuri | image_style('qna_image_30') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}"/>
 					</div>
 					<div class="session-details__right-content__paragraph">
 						{{ paragraph.field_description.value | raw }}

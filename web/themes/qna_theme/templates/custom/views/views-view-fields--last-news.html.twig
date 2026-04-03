@@ -3,7 +3,7 @@
 {% if translated_entity.fields.field_boolean.value %}
 	<section class="last-news-container">
 		<div class="last-news-img-container">
-			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('qna_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
 		</div>
 		<div class="last-news-text-container">
 			<div class="mobile_grid">
@@ -38,7 +38,7 @@
 {% else %}
 	<section class="last-news-container">
 		<div class="last-news-img-container">
-			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('qna_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}" class="last-news-photo"/>
 		</div>
 		<div class="last-news-text-container">
 			<div class="mobile_grid">

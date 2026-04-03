@@ -3,7 +3,7 @@
 <article class="views-row__block">
 	<a href="{{ path('entity.node.canonical', {'node': translated_entity.nid.value}) }}" class="views-row__block-item{% if translated_entity.fields.field_boolean.value %} views-row__block-item--highlight{% endif %}">
 		<div class="views-row__photo-container ratio ratio-16x9">
-			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" alt=""/>
+			<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('qna_news') }}" alt=""/>
 		</div>
 
 		<div class="views-row__text-container">

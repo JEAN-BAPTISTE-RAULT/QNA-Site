@@ -1,8 +1,8 @@
 {% set translated_entity = row._entity | translation %}
 
-<section class="view-fields-participants">	
+<section class="view-fields-participants">
 	<div class="ratio">
-		<img class="view-fields-participants__image" src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_profile') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
+		<img class="view-fields-participants__image" src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('qna_profile') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
 	</div>
 	<div class="pt-3 pb-3">
 		{% set country_term = translated_entity.fields.field_country.entity %}

@@ -6,7 +6,7 @@
 		<div class="block-documentation-content__item">
 			<div class="block-documentation-content__item-photo">
 				{% if translated_entity.fields.field_image is not empty %}
-					<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('neshama_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
+					<img src="{{ translated_entity.fields.field_image.entity.fileuri | image_style('qna_news') }}" width="16" height="9" alt="{{ translated_entity.fields.field_image.alt|default('') }}"/>
 				{% else %}
 					PLACEHOLDER
 				{% endif %}

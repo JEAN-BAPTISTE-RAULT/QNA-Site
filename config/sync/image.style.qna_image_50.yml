@@ -1,0 +1,33 @@
+uuid: 69129293-2dc8-44ef-a3fc-c34909fc8e9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_no_ratio
+  module:
+    - crop
+name: qna_image_50
+label: 'Qna : Image 50%'
+effects:
+  989eb0ec-32c3-4e3a-8391-df50720bb81f:
+    uuid: 989eb0ec-32c3-4e3a-8391-df50720bb81f
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: neshama_no_ratio
+      automatic_crop_provider: null
+  f2930d92-e012-4a33-b396-4027f21fc13f:
+    uuid: f2930d92-e012-4a33-b396-4027f21fc13f
+    id: image_scale
+    weight: 2
+    data:
+      width: 400
+      height: null
+      upscale: true
+  d5018be0-de88-4c5c-b0ac-9584779d9b1c:
+    uuid: d5018be0-de88-4c5c-b0ac-9584779d9b1c
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
+pipeline: optimize

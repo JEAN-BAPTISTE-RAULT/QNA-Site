@@ -1,0 +1,33 @@
+uuid: 85ad38a6-c851-4292-b7f3-b47635631dd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: qna_news
+label: 'Qna : News'
+effects:
+  cfb1fd71-46d1-4020-a0f7-742a5364a089:
+    uuid: cfb1fd71-46d1-4020-a0f7-742a5364a089
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  b7f524b3-5262-46e3-9fde-01fd2fb0d306:
+    uuid: b7f524b3-5262-46e3-9fde-01fd2fb0d306
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 800
+      height: 450
+      anchor: center-center
+  bafa2c46-c652-4829-9678-6c7cb6d0fafc:
+    uuid: bafa2c46-c652-4829-9678-6c7cb6d0fafc
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
+pipeline: optimize

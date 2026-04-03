@@ -12,7 +12,7 @@
       <div class="paragraph--type--block-centered-image-medium__container">
         <figure class="paragraph--type--block-centered-image-medium__container__img-container">
           <div class="ratio ratio-16x9">
-            <img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_image_70') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}"/>
+            <img src="{{ paragraph.field_image.entity.fileuri | image_style('qna_image_70') }}" width="{{ paragraph.field_image.0.width }}" height="{{ paragraph.field_image.0.height }}" alt="{{ paragraph.field_image.alt|default('') }}"/>
           </div>
           {% if paragraph.field_caption.value is not empty %}
             <figcaption class="paragraph--type--block-centered-image-medium__container__img-legend">{{ paragraph.field_caption.value | raw }}</figcaption>
