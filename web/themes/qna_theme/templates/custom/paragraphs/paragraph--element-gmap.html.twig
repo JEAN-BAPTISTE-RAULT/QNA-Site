@@ -1,0 +1,20 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="block-img-left__container">
+        <div class="motif motif_primary motif_border"></div>
+        <div class="block-img-left__content">
+          Mettre la carte
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
