@@ -13,7 +13,7 @@
 		{% block content %}
 			<div id="v-btn-{{uniqId}}" class="d-flex gap-3 align-items-center cursor-pointer">
 				<div class="element__video-video">
-					<img src="{{ paragraph.field_image.entity.fileuri | image_style('neshama_video_preview') }}" width="16" height="9" alt="{{ paragraph.field_image.alt|default('') }}"/>
+					<img src="{{ paragraph.field_image.entity.fileuri | image_style('qna_video_preview') }}" width="16" height="9" alt="{{ paragraph.field_image.alt|default('') }}"/>
 				</div>
 				<div>
 					{{ paragraph.field_title.value }}

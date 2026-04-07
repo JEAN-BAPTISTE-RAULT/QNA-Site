@@ -1,0 +1,10 @@
+uuid: b4115b7e-780f-48e1-ba8d-b1970274e2cb
+langcode: en
+status: true
+dependencies: {  }
+id: element_gmap
+label: 'Element : Gmap'
+icon_uuid: null
+icon_default: null
+description: 'sert à la carte custom google map'
+behavior_plugins: {  }

@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.block_news
     - paragraphs.paragraphs_type.block_slideshow_stakeholders
     - paragraphs.paragraphs_type.block_text_left_image_right
+    - paragraphs.paragraphs_type.element_gmap
   module:
     - entity_reference_revisions
 id: node.page_homepage.field_paragraphs
@@ -31,6 +32,7 @@ settings:
       block_news: block_news
       block_text_left_image_right: block_text_left_image_right
       block_slideshow_stakeholders: block_slideshow_stakeholders
+      element_gmap: element_gmap
     negate: 0
     target_bundles_drag_drop:
       block_2_columns_text:
@@ -38,9 +40,6 @@ settings:
         enabled: false
       block_centered_image_large:
         weight: 19
-        enabled: false
-      block_centered_image_medium:
-        weight: 20
         enabled: false
       block_image_left_text_right:
         weight: 21
@@ -78,6 +77,9 @@ settings:
       element_documentary_resource:
         weight: 31
         enabled: false
+      element_gmap:
+        weight: 35
+        enabled: true
       element_item_slideshow:
         weight: 36
         enabled: false

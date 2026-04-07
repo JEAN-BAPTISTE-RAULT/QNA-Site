@@ -1,0 +1,25 @@
+uuid: 4d458c6d-aa6a-406d-bda2-06cdfcdbf8c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.element_gmap.field_description
+    - paragraphs.paragraphs_type.element_gmap
+  module:
+    - text
+id: paragraph.element_gmap.default
+targetEntityType: paragraph
+bundle: element_gmap
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

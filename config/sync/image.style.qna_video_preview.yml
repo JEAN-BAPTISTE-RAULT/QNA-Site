@@ -1,0 +1,33 @@
+uuid: 4b530f31-77f8-4cce-9d15-d0b538917066
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.neshama_16_9
+  module:
+    - crop
+name: qna_video_preview
+label: 'Qna : Video preview'
+effects:
+  2f36c3be-372f-48bd-92d2-da01cbc52cf9:
+    uuid: 2f36c3be-372f-48bd-92d2-da01cbc52cf9
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: neshama_16_9
+      automatic_crop_provider: null
+  2b71878c-9ffd-440a-a0b1-4c7b22fae4ac:
+    uuid: 2b71878c-9ffd-440a-a0b1-4c7b22fae4ac
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 560
+      height: 315
+      anchor: center-center
+  641663bb-8f0a-4355-8cc7-49ed92d4b3cf:
+    uuid: 641663bb-8f0a-4355-8cc7-49ed92d4b3cf
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
+pipeline: optimize
