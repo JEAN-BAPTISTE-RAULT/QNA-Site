@@ -1,3 +1,5 @@
+@use '../breakpoints' as *;
+
 .collections {
     &-slide {}
     &-item {
@@ -25,12 +27,21 @@
         background-color: var(--n-utility-7);
     }
     &-title {
-        font-size: 25px;
+        font-size: 2vw;
         font-weight: 600;
         display: flex;
         flex-direction: column;
-        line-height: 35px;
+        line-height: 1.2;
         align-items: center;
+        padding: 0 1rem;
+
+        @include breakpoint-down-lg {
+            font-size: 20px;
+        }
+
+        @include breakpoint-down-md {
+            font-size: 1.1rem;
+        }
 
         &:after {
             content: '';
@@ -43,9 +54,13 @@
             margin-bottom: 20px;
         }
     }
-    &-link {
+    &-link-label {
         font-size: 15px;
         font-weight: 400;
+
+        @include breakpoint-down-md {
+            font-size: .8rem;
+        }
     }
 }
 
@@ -61,5 +76,15 @@
     .swiper,
     .block-stakeholders__title {
         padding-left: 8.33vw;
+
+        h2 {
+            @include breakpoint-down-md {
+                padding-left: 0;
+            }
+        }
+
+        @include breakpoint-down-md {
+            padding-left: 20px;
+        }
     }
 }
