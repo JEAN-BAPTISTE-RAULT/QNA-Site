@@ -7,14 +7,10 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="block-img-left__container">
-        <div class="motif motif_primary motif_border"></div>
-        <div class="block-img-left__content">
-          Mettre la carte
-        </div>
-      </div>
-    {% endblock %}
-  </div>
+  {% block content %}
+    <div{{ attributes.addClass(classes) }}>
+      <div id="qna-gmap" style="width: 100%; height: 450px;"></div>
+    </div>
+    {{ attach_library('qna_theme/gmap') }}
+  {% endblock %}
 {% endblock paragraph %}

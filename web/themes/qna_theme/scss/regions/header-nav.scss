@@ -91,7 +91,7 @@
 
         &:hover,
         &--active {
-            background-color: var(--n-utility-2);
+            background-color: var(--n-utility-6);
         }
 
         @media screen and (max-width: 1230px) {
@@ -283,6 +283,10 @@
     }
 
     .nr-account-icon {
+
+        img {
+            filter: invert(1);
+        }
 
         a,
         span {

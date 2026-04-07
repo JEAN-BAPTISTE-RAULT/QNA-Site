@@ -1,0 +1,26 @@
+.paragraph--type--element-gmap {
+    --deco-w: 100px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    #qna-gmap {
+        flex: 1;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        top: 0;
+        width: var(--deco-w);
+    }
+
+    &:before {
+        background-color: var(--n-secondary);
+    }
+
+    &:after {
+        background-color: var(--n-primary);
+    }
+}

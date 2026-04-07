@@ -26,32 +26,15 @@
                 slidesOffsetAfter: 0,
             }
 
-            let hasBreakpoints = htmlElement.getAttribute('has-breakpoints') ? htmlElement.getAttribute('has-breakpoints') : true;
+            let allowTouch = htmlElement.getAttribute('allow-touch');
+            allowTouch = allowTouch === 'false' ? false : true;
 
-            let allowTouch = htmlElement.getAttribute('allow-touch') ? htmlElement.getAttribute('allow-touch') : true;
-
-            if (hasBreakpoints === "false") {
-                hasBreakpoints = false
-            }
-
-            if (allowTouch === "false") {
-                allowTouch = false
-            }
-
-            if (hasBreakpoints) {
-                options.breakpoints = {
-                    360: {
-                        slidesPerView: 1.2,
-                        slidesOffsetBefore: 0,
-                    },
-                    768: {
-                        slidesPerView: 2.2,
-                        slidesOffsetBefore: 0,
-                    },
-                    1025: {
-                        slidesPerView: 3.2,
-                        slidesOffsetBefore: 0,
-                    }
+            const rawBreakpoints = htmlElement.getAttribute('data-breakpoints');
+            if (rawBreakpoints) {
+                try {
+                    options.breakpoints = JSON.parse(rawBreakpoints);
+                } catch (e) {
+                    console.warn('Swiper: data-breakpoints JSON invalide sur', htmlElement, e);
                 }
             }
 

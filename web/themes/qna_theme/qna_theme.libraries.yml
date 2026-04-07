@@ -58,6 +58,12 @@ qna:
     - core/drupal
     - core/once
 
+gmap:
+  js:
+    js/gmap.js: {}
+  dependencies:
+    - core/drupal
+
 print:
   css:
     theme:

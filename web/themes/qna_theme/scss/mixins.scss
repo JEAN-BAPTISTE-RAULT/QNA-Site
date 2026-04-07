@@ -1,6 +1,9 @@
 @use "sass:list";
 @mixin transition($properties...) {
-  $prop: if(list.length($properties) == 0, all, $properties);
+  $prop: $properties;
+  @if list.length($properties) == 0 {
+    $prop: all;
+  }
 
   $transitions: ();
   @each $p in $prop {

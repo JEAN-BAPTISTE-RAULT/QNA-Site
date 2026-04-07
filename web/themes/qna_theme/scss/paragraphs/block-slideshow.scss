@@ -1,14 +1,7 @@
 @use '../breakpoints' as *;
 
 .paragraph--type--block-slideshow-stakeholders {
-    background-color: var(--n-utility-4);
-    background-image: url("../images/n_blanc_1.png"), url('../images/n_blanc_2.png');
-    background-repeat: no-repeat;
-    background-position: 0% 0%, 100% 100%;
-
-    @include breakpoint-down-lg {
-        background-position: 0% 0%, 1000% 1000%;
-    }
+    background-color: #fff;
 
     .block-stakeholders {
         &__container {
@@ -29,7 +22,7 @@
                 font-size: 15px;
                 font-style: normal;
                 line-height: 40px;
-                color: white;
+                color: #000;
                 text-decoration: none;
                 text-transform: none;
 
@@ -43,7 +36,7 @@
             margin-bottom: 20px;
 
             h2 {
-                color: white;
+                color: #000;
                 font-size: 25px;
                 font-style: normal;
                 font-weight: 700;
@@ -58,7 +51,7 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
-                color: white;
+                color: #000;
 
                 i {
                     padding-right: 102px;
@@ -133,7 +126,7 @@
 
             .block-partner {
                 &__item {
-                    color: white;
+                    color: #000;
 
                     h3 {
                         font-size: 24px;
@@ -151,7 +144,7 @@
                         font-weight: 400;
                         text-decoration: none;
                         text-transform: none;
-                        color: white;
+                        color: #000;
 
                         i {
                             margin-right: 6px;
@@ -205,7 +198,7 @@
             padding: 30px 20px;
             align-items: center;
             gap: 10px;
-            color: white;
+            color: #000;
         }
     }
 

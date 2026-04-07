@@ -4,7 +4,7 @@
     &__container {
         position: relative;
         border-left: solid var(--n-primary) 100px;
-        border-right: solid white 100px;
+        border-right: solid var(--n-utility-6) 100px;
 
         @include breakpoint-down-lg {
             border: none;
