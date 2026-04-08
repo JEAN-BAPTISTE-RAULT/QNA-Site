@@ -1,0 +1,94 @@
+uuid: d7df5b8e-5449-4f53-acca-9d0c45365bd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_collections
+    - paragraphs.paragraphs_type.block_collection
+    - paragraphs.paragraphs_type.block_slideshow_collection
+  module:
+    - entity_reference_revisions
+id: paragraph.block_slideshow_collection.field_collections
+field_name: field_collections
+entity_type: paragraph
+bundle: block_slideshow_collection
+label: Collections
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      block_collection: block_collection
+    negate: 0
+    target_bundles_drag_drop:
+      block_2_columns_text:
+        weight: 23
+        enabled: false
+      block_centered_image_large:
+        weight: 24
+        enabled: false
+      block_collection:
+        weight: 25
+        enabled: true
+      block_image_left_text_right:
+        weight: 26
+        enabled: false
+      block_jumbo:
+        weight: 27
+        enabled: false
+      block_left_aligned_text:
+        weight: 28
+        enabled: false
+      block_news:
+        weight: 29
+        enabled: false
+      block_partner:
+        weight: 30
+        enabled: false
+      block_resources_list:
+        weight: 31
+        enabled: false
+      block_session_details:
+        weight: 32
+        enabled: false
+      block_slideshow:
+        weight: 33
+        enabled: false
+      block_slideshow_collection:
+        weight: 34
+        enabled: false
+      block_slideshow_stakeholders:
+        weight: 35
+        enabled: false
+      block_text_left_image_right:
+        weight: 36
+        enabled: false
+      block_video:
+        weight: 37
+        enabled: false
+      element_documentary_resource:
+        weight: 38
+        enabled: false
+      element_gmap:
+        weight: 39
+        enabled: false
+      element_item_slideshow:
+        weight: 40
+        enabled: false
+      element_link_resource:
+        weight: 41
+        enabled: false
+      element_social_media:
+        weight: 42
+        enabled: false
+      element_text:
+        weight: 43
+        enabled: false
+      element_video_resource:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

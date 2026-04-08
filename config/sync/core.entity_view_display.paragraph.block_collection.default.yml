@@ -1,0 +1,50 @@
+uuid: 8de749cc-5e28-40f2-b594-7ea6fc56d3d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_collection.field_image
+    - field.field.paragraph.block_collection.field_link
+    - field.field.paragraph.block_collection.field_title
+    - image.style.qna_collection_square
+    - paragraphs.paragraphs_type.block_collection
+  module:
+    - image
+    - link
+id: paragraph.block_collection.default
+targetEntityType: paragraph
+bundle: block_collection
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: qna_collection_square
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

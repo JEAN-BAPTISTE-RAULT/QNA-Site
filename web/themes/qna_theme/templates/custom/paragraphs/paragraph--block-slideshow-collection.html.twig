@@ -1,0 +1,56 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <section{{attributes.addClass(classes)}}>
+    {% block content %}
+      <div class="paragraph--type--block-slideshow-stakeholders paragraph--type--block-slideshow-stakeholders-collections">
+        <div class="d-flex justify-content-between align-items-center block-stakeholders__title">
+            <h2>{{ paragraph.field_title.value }}</h2>
+        </div>
+
+        <div class="swiper collections"
+             slide-views="2.2"
+             data-breakpoints='{"480": {"slidesPerView": 1.2}, "768": {"slidesPerView": 1.8}, "1024": {"slidesPerView": 2.2}}'>
+          <div class="swiper-wrapper">
+            {% for item in paragraph.field_collections %}
+
+              <div class="swiper-slide collections-slide">
+                {{ item|view }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+{#        <div class="block-stakeholders__items">#}
+
+{#          <div>#}
+{#            <button name="navigation" class="swiper-btn-prev" aria-label="{{'Previous slide' |t}}">#}
+{#              <i class="icon-chevron-right" aria-hidden="true"></i>#}
+{#            </button>#}
+{#            <button name="navigation" class="swiper-btn-next" aria-label="{{'Next slide' |t}}">#}
+{#              <i class="icon-chevron-right" aria-hidden="true"></i>#}
+{#            </button>#}
+{#          </div>#}
+
+{#          <div class="swiper" slide-views="3.2" space-between="23" navigation=".swiper-btn">#}
+{#            <div class="swiper-wrapper">#}
+{#              {% for item in paragraph.field_collections %}#}
+{#                <div class="swiper-slide">#}
+{#                  {{ item | view }}#}
+{#                </div>#}
+{#              {% endfor %}#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+    {% endblock %}
+  </section>
+{% endblock paragraph %}
+{{ attach_library('qna_theme/swiper') }}

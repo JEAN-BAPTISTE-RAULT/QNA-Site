@@ -1,0 +1,33 @@
+uuid: a89b43de-b817-4223-b06c-02b11b6d4c7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.qna_carre
+  module:
+    - crop
+name: qna_collection_square
+label: 'Qna : Collection Square'
+effects:
+  056307f5-b99a-419e-ba9d-7ce39617dd03:
+    uuid: 056307f5-b99a-419e-ba9d-7ce39617dd03
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: qna_carre
+      automatic_crop_provider: null
+  8737fc4c-f5ae-4123-9760-6c0be65ec1b0:
+    uuid: 8737fc4c-f5ae-4123-9760-6c0be65ec1b0
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 305
+      height: 312
+      anchor: center-center
+  11d8fb97-6d39-42d3-81b9-a8060a59cc57:
+    uuid: 11d8fb97-6d39-42d3-81b9-a8060a59cc57
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
+pipeline: optimize
