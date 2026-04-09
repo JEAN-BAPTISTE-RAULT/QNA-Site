@@ -5,75 +5,66 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
+
   {% if items %}
     {% if menu_level == 0 %}
       {% set root_attrs = (attributes ?? create_attribute()).addClass('menu', 'menu-root') %}
-      <ul{{ root_attrs }}>
-    {% else %}
-      {% set child_classes = ['menu-sub', 'menu-sub--' ~ menu_level] %}
-
-      {% if menu_level == 1 %}
-        {% set has_level3 = false %}
-        {% for it in items %}
-          {% if it.below is not empty %}
-            {# on cherche un petit-enfant (niveau 3) #}
-            {% for child in it.below %}
-              {% if child.below is not empty %}
-                {% set has_level3 = true %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-        {% if has_level3 %}
-          {% set child_classes = child_classes|merge(['menu-sub-column']) %}
-        {% endif %}
-      {% endif %}
-
-      {% set child_attrs = create_attribute({'class': child_classes}) %}
-      <ul{{ child_attrs }}>
+<ul{{ root_attrs }}>
+  {% else %}
+  {% set child_classes = ['menu-sub', 'menu-sub--' ~ menu_level] %}
+  {% set child_attrs = create_attribute({'class': child_classes}) %}
+  <ul{{ child_attrs }}>
     {% endif %}
 
-      {% for item in items %}
-        {% set is_fake = item.url is not empty
-          and item.url.isRouted()
-          and (item.url.getRouteName() in ['<nolink>', '<none>', '<button>']) %}
+    {% for item in items %}
+      {# Détection des <nolink> #}
+      {% set is_fake = item.url is not empty
+        and item.url.isRouted()
+        and (item.url.getRouteName() in ['<nolink>', '<none>', '<button>']) %}
 
-        {% set has_real_link = (item.url is not empty) and (not is_fake) %}
-        {% set has_children  = item.below is not empty %}
+      {% set has_real_link = (item.url is not empty) and (not is_fake) %}
+      {% set has_children  = item.below is not empty %}
 
-        {% set classes = [
-          'menu-item',
-          menu_level == 0 ? 'menu-item-root',
-          has_children ? 'menu-item--expanded'
-        ] %}
+      {% set classes = [
+        'menu-item',
+        menu_level == 0 ? 'menu-item-root',
+        has_children ? 'menu-item--expanded'
+      ] %}
 
-        <li{{ item.attributes.addClass(classes) }}>
-          {% if has_real_link %}
-            {% if menu_level == 0 %}
-              {{ link(item.title, item.url, {'class': ['link-root']}) }}
-            {% else %}
-              <span>
+      <li{{ item.attributes.addClass(classes) }}>
+
+        {# 1. Cas lien réel (node, vue, etc.) #}
+        {% if has_real_link %}
+          {% if menu_level == 0 %}
+            {{ link(item.title, item.url, {'class': ['link-root']}) }}
+          {% else %}
+            <span>
                 {{ link(item.title, item.url, {'class': ['link-sub', 'link-sub--' ~ menu_level]}) }}
               </span>
-            {% endif %}
           {% endif %}
 
-          {% if has_children %}
-            {% if item.title != 'Col' %}
-              {% if menu_level == 0 %}
-                <div class="link link-root">
-                  <span>{{ item.title }}</span>
-                </div>
-              {% else %}
-                <div class="link link-title link-sub link-sub--{{ menu_level }}">
-                  <span>{{ item.title }}</span>
-                </div>
-              {% endif %}
+          {# 2. Cas <nolink> : on affiche le titre, sauf pour "Col" #}
+        {% else %}
+          {% if item.title != 'Col' %}
+            {% if menu_level == 0 %}
+              <div class="link link-root">
+                <span>{{ item.title }}</span>
+              </div>
+            {% else %}
+              <div class="link link-title link-sub link-sub--{{ menu_level }}">
+                <span>{{ item.title }}</span>
+              </div>
             {% endif %}
-            {{ menus.menu_links(item.below, null, menu_level + 1) }}
           {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+        {% endif %}
+
+        {# 3. Enfants : toujours appelés si présents #}
+        {% if has_children %}
+          {{ menus.menu_links(item.below, null, menu_level + 1) }}
+        {% endif %}
+
+      </li>
+    {% endfor %}
+  </ul>
   {% endif %}
-{% endmacro %}
+  {% endmacro %}
