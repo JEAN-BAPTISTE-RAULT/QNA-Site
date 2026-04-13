@@ -2342,6 +2342,18 @@ header[role=banner] .button-menu-mobile {
 .block-menu-footer__item span {
   display: none;
 }
+.block-menu-footer__item a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  text-decoration: none;
+  text-transform: none;
+  color: white !important;
+}
+.block-menu-footer__item a:hover {
+  text-decoration: underline;
+}
 @media (max-width: 992px) {
   .block-menu-footer__item ul {
     padding-left: 0rem !important;
@@ -2363,7 +2375,7 @@ header[role=banner] .button-menu-mobile {
   line-height: 25px;
   text-decoration: none;
   text-transform: none;
-  color: white;
+  color: white !important;
 }
 
 .block-socials-medias-footer .field--name-field-title {

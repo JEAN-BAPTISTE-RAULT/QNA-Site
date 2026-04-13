@@ -98,6 +98,20 @@
             display: none;
         }
 
+        a {
+            font-size: 14px; 
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px;
+            text-decoration: none;
+            text-transform: none;
+            color: white !important;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
         ul {
             @include breakpoint-down-lg {
                 padding-left: 0rem !important;
@@ -118,7 +132,7 @@
                     line-height: 25px;
                     text-decoration: none;
                     text-transform: none;
-                    color: white;
+                    color: white !important;
                 }
             }
         }
