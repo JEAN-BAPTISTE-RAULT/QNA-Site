@@ -48,10 +48,12 @@ function qna_registration_form_user_login_form_alter(array &$form, FormStateInte
     unset($form['actions']['forgot_pass']);
   }
 
+  $logo_url = \Drupal::service('file_url_generator')->generateString('public://neshama_logo2.png');
+
   // Title
   $form['login_title'] = [
     '#type' => 'markup',
-    '#markup' => '<h2 class="user-login__title">Login</h2>',
+    '#markup' => '<div class="login_img-div"><img src="' . $logo_url . '" alt="logo" /></div> <h2 class="user-login__title">Login</h2>',
     '#weight' => -100,
   ];
 

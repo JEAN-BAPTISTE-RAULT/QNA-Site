@@ -2259,7 +2259,8 @@ header[role=banner] .button-menu-mobile {
   background-color: var(--n-primary);
   padding: 58px 100px;
   transition: all 0.3s;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 100px;
 }
 @media (max-width: 1400px) {
   .block-footer__container {
@@ -2314,7 +2315,7 @@ header[role=banner] .button-menu-mobile {
 
 .block-menu-footer__container {
   display: flex;
-  gap: 100px;
+  gap: 50px;
   margin: 0;
   padding: 0;
   transition: all 0.3s;
