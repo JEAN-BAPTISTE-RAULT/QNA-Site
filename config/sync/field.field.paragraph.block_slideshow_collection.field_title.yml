@@ -1,0 +1,19 @@
+uuid: f252895d-63b7-4fcb-8897-bfe91b486773
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.block_slideshow_collection
+id: paragraph.block_slideshow_collection.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: block_slideshow_collection
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

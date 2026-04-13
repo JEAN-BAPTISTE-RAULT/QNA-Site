@@ -1,0 +1,10 @@
+uuid: a9f4517e-0ba7-4ff1-aaf2-ae796f793e0c
+langcode: en
+status: true
+dependencies: {  }
+id: block_slideshow_collection
+label: 'Block SlideShow Collection'
+icon_uuid: null
+icon_default: null
+description: 'Block SlideShow Collection'
+behavior_plugins: {  }
