@@ -276,6 +276,11 @@
     padding: 50px 22px;
   }
 }
+.login-layout__left .user-login-form .login_img-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .login-layout__left .user-login-form h2 {
   text-align: center;
   margin-bottom: 64px;
