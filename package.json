@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch web/themes/qna_theme/scss/style.scss:web/themes/qna_theme/css/style.css --source-map",
+    "sass:build": "sass web/themes/qna_theme/scss/style.scss:web/themes/qna_theme/css/style.css --style=compressed --no-source-map",
     "serve": "browser-sync start --config bs-config.js",
     "start": "concurrently \"npm run sass\" \"npm run serve\"",
     "cr": "php vendor/drush/drush/drush.php cr"
